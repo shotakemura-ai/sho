@@ -7,18 +7,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
       rel="stylesheet"
     />
     <style>
       :root {
         color-scheme: light;
-        --accent: #5c6df4;
-        --accent-soft: #eef0ff;
-        --text: #1f2933;
-        --muted: #55606d;
-        --card-bg: #ffffff;
-        --bg: linear-gradient(135deg, #f9fafc 0%, #eef2ff 100%);
+        --accent: #5368ff;
+        --accent-strong: #4253f1;
+        --accent-soft: #e8ecff;
+        --text: #1e2530;
+        --muted: #586174;
+        --surface: #ffffff;
+        --bg: radial-gradient(circle at 15% 20%, rgba(83, 104, 255, 0.18), transparent
+              55%),
+          radial-gradient(circle at 85% 5%, rgba(255, 192, 140, 0.24), transparent 60%),
+          #f6f7fb;
       }
 
       * {
@@ -34,147 +38,243 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        padding: 48px 16px;
+        padding: clamp(32px, 4vw, 64px) 16px;
         color: var(--text);
       }
 
-      .announcement-card {
-        width: min(960px, 100%);
-        background: var(--card-bg);
-        border-radius: 28px;
-        box-shadow: 0 32px 60px rgba(92, 109, 244, 0.18);
+      main {
+        width: min(1040px, 100%);
+        background: var(--surface);
+        border-radius: 32px;
+        box-shadow: 0 28px 80px rgba(38, 52, 133, 0.16);
         overflow: hidden;
-        border: 1px solid rgba(92, 109, 244, 0.12);
+        border: 1px solid rgba(83, 104, 255, 0.12);
+        position: relative;
+        isolation: isolate;
       }
 
-      .hero-image {
+      main::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          circle at 10% 90%,
+          rgba(83, 104, 255, 0.1),
+          transparent 55%
+        );
+        pointer-events: none;
+        z-index: -1;
+      }
+
+      .hero {
         position: relative;
         aspect-ratio: 16 / 9;
-        background: linear-gradient(rgba(28, 35, 70, 0.25), rgba(28, 35, 70, 0.55)),
-          url('https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=1600&q=80')
-            center/cover;
+        overflow: hidden;
+      }
+
+      .hero img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transform: scale(1.02);
+        filter: saturate(1.1);
+      }
+
+      .hero::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(15, 20, 45, 0.25), rgba(15, 20, 45, 0.6));
+      }
+
+      .hero-copy {
+        position: absolute;
+        inset: auto clamp(20px, 5vw, 56px) clamp(24px, 6vw, 64px);
+        display: flex;
+        flex-direction: column;
+        gap: clamp(12px, 2vw, 20px);
+        max-width: min(480px, 80%);
+        color: #ffffff;
       }
 
       .hero-badge {
-        position: absolute;
-        top: 24px;
-        left: 24px;
-        background: rgba(255, 255, 255, 0.85);
-        backdrop-filter: blur(8px);
-        border-radius: 999px;
-        padding: 8px 20px;
-        font-weight: 600;
-        font-size: 0.9rem;
-        color: var(--accent);
         display: inline-flex;
         align-items: center;
-        gap: 8px;
-      }
-
-      .hero-badge svg {
-        width: 16px;
-        height: 16px;
-      }
-
-      .content {
-        padding: 40px clamp(24px, 4vw, 56px) 48px;
-      }
-
-      .content h1 {
-        margin: 0 0 16px;
-        font-size: clamp(2rem, 4vw, 2.8rem);
-        line-height: 1.15;
-        letter-spacing: -0.02em;
-      }
-
-      .content p {
-        margin: 0 0 32px;
-        color: var(--muted);
-        font-size: 1.05rem;
-        line-height: 1.7;
-      }
-
-      .info-grid {
-        display: grid;
-        gap: 24px;
-        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      }
-
-      .info-item {
-        background: var(--accent-soft);
-        border-radius: 20px;
-        padding: 24px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-      }
-
-      .info-item h2 {
-        margin: 0;
-        font-size: 1rem;
-        color: var(--accent);
+        gap: 10px;
+        padding: 10px 18px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.16);
+        backdrop-filter: blur(12px);
+        font-size: 0.9rem;
         letter-spacing: 0.08em;
         text-transform: uppercase;
       }
 
-      .info-item p {
+      .hero-title {
         margin: 0;
-        color: var(--text);
-        font-size: 1.1rem;
-        font-weight: 600;
-        line-height: 1.4;
+        font-size: clamp(2.4rem, 5vw, 3.4rem);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        font-weight: 700;
       }
 
-      @media (max-width: 640px) {
-        body {
-          padding: 32px 16px;
+      .hero-sub {
+        margin: 0;
+        font-size: clamp(1rem, 2.2vw, 1.2rem);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.9);
+      }
+
+      .content {
+        padding: clamp(32px, 5vw, 60px);
+        display: grid;
+        gap: clamp(28px, 4vw, 48px);
+      }
+
+      .intro {
+        display: grid;
+        gap: 18px;
+        max-width: 640px;
+      }
+
+      .intro p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+        font-size: 1.05rem;
+      }
+
+      .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: clamp(20px, 4vw, 28px);
+      }
+
+      .info-item {
+        padding: clamp(22px, 3vw, 28px);
+        border-radius: 22px;
+        background: linear-gradient(145deg, rgba(83, 104, 255, 0.1), rgba(83, 104, 255, 0));
+        border: 1px solid rgba(83, 104, 255, 0.2);
+        box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        display: grid;
+        gap: 12px;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .info-item::after {
+        content: '';
+        position: absolute;
+        inset: -30% 40% auto auto;
+        width: 120px;
+        height: 120px;
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.4), transparent 65%);
+        opacity: 0.8;
+      }
+
+      .info-label {
+        font-size: 0.9rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--accent-strong);
+      }
+
+      .info-value {
+        margin: 0;
+        font-size: 1.2rem;
+        font-weight: 600;
+        line-height: 1.5;
+      }
+
+      .info-value span {
+        display: block;
+        color: var(--muted);
+        font-size: 0.95rem;
+        font-weight: 500;
+      }
+
+      @media (max-width: 720px) {
+        .hero-copy {
+          inset: auto 24px 32px;
+          max-width: calc(100% - 48px);
+        }
+
+        .hero-title {
+          font-size: clamp(2rem, 10vw, 2.6rem);
         }
 
         .content {
-          padding: 32px 24px 40px;
+          padding: clamp(28px, 8vw, 40px);
+        }
+      }
+
+      @media (max-width: 520px) {
+        body {
+          padding: 24px 12px;
+        }
+
+        .hero {
+          aspect-ratio: 4 / 3;
+        }
+
+        .hero-copy {
+          gap: 14px;
         }
 
         .hero-badge {
-          top: 16px;
-          left: 16px;
+          font-size: 0.8rem;
+        }
+
+        .info-item {
+          border-radius: 18px;
+        }
+
+        .info-value {
+          font-size: 1.1rem;
         }
       }
     </style>
   </head>
   <body>
-    <main class="announcement-card">
-      <div class="hero-image">
-        <div class="hero-badge">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-            <path
-              d="M7 4v8a5 5 0 1 0 5-5h-8"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-            />
-          </svg>
-          Learning Together
+    <main>
+      <section class="hero">
+        <img
+          src="https://images.unsplash.com/photo-1526379095098-d400fd0bf935?auto=format&fit=crop&w=1800&q=80"
+          alt="ホワイトボードの前でディスカッションするビジネスパーソン"
+        />
+        <div class="hero-copy">
+          <span class="hero-badge">IN-HOUSE LEARNING</span>
+          <h1 class="hero-title">社内AI勉強会 2024</h1>
+          <p class="hero-sub">
+            現場での活用事例と最新トレンドを共有しながら、AI時代の働き方を共にデザインする2時間。
+          </p>
         </div>
-      </div>
-      <div class="content">
-        <h1>社内AI勉強会 2024</h1>
-        <p>
-          社内横断の知見共有の場として、AIの最新動向から現場での活用事例までをカバーする勉強会を開催します。気軽に参加して、未来の業務を一緒にデザインしましょう。
-        </p>
+      </section>
+      <section class="content">
+        <div class="intro">
+          <p>
+            部門を越えた知見交換の機会として、生成AIの基礎から実務への落とし込みまでをギュッと凝縮。
+            気軽に参加して、これからのプロジェクトに活かせるヒントを持ち帰りましょう。
+          </p>
+        </div>
         <div class="info-grid">
           <article class="info-item">
-            <h2>タイトル</h2>
-            <p>「AIで変わる仕事のカタチ」</p>
+            <span class="info-label">タイトル</span>
+            <p class="info-value">「AIで変わる仕事のカタチ」</p>
           </article>
           <article class="info-item">
-            <h2>開催日時</h2>
-            <p>2024年7月18日（木） 15:00 - 17:00</p>
+            <span class="info-label">開催日時</span>
+            <p class="info-value">
+              2024年7月18日（木）<span>15:00 - 17:00</span>
+            </p>
           </article>
           <article class="info-item">
-            <h2>場所</h2>
-            <p>本社カンファレンスルーム A</p>
+            <span class="info-label">場所</span>
+            <p class="info-value">本社カンファレンスルーム A</p>
           </article>
         </div>
-      </div>
+      </section>
     </main>
   </body>
 </html>
