@@ -1,0 +1,15 @@
+# OS
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# 一時ファイル
+*.tmp
+*.bak
+~$*
+
+# Officeロックファイル
+.~lock.*
+
+# ログ
+*.log
