@@ -13,3 +13,8 @@ desktop.ini
 
 # ログ
 *.log
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
