@@ -38,7 +38,9 @@
       "Bash(net use:*)",
       "Bash(ls -la .git/index*)",
       "Bash(rm .git/index.lock)",
-      "Bash(ls .git/index*)"
+      "Bash(ls .git/index*)",
+      "Bash(git commit:*)",
+      "Bash(gh auth:*)"
     ]
   }
 }
