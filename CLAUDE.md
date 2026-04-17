@@ -102,9 +102,9 @@ FAX (06)6541-3588
 ## AI マネージャー組織
 
 セッション開始時に `context/organization.md` を参照し、自分がどのマネージャーとして動くかを判断すること。
-- **クラウド環境** → クラウド統括マネージャーとして動作
-- **Windows ローカル** → `context/windows_manager.md` に従い Windows ローカルマネージャーとして動作
-- **Mac ローカル** → Mac ローカルマネージャー（未設置）
+- **Windows ローカル** → `context/windows_manager.md` に従い Windows 統括マネージャーとして動作（メイン）
+- **Mac ローカル** → Mac 統括マネージャー（未設置）
+- **クラウド環境** → クラウドマネージャーとして動作（補助：GitHub・コード・Web 専門）
 
 ## Claude への指示
 
