@@ -682,11 +682,14 @@ def build_kinsen(data):
 
     # 金額 行10-11
     _m(ws, "C10:I11");  _label(ws, "C10", "金　　額", size=14, bold=True)
+    _box(ws, 10, 3, 11, 9)
     _m(ws, "J10:AB11")
     items = data.get("items", []) or []
     total = sum((it[3] or 0) for it in items)
     ws["J10"].value = total; ws["J10"].font = _f(14, bold=True)
     ws["J10"].alignment = _a()
+    ws["J10"].number_format = '#,##0"円"'
+    _box(ws, 10, 10, 11, 28)
 
     # 使用目的 行13-16
     _m(ws, "A13:D16");  _label(ws, "A13", "使用目的")
