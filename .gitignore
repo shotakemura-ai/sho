@@ -28,3 +28,5 @@ token.pickle
 *.pickle
 client_secret_*.json
 .plaud_asana_state.json
+.mcp.json
+gcp-oauth.keys.json

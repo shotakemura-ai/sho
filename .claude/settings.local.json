@@ -79,7 +79,9 @@
       "Bash(git -C \"//192.168.1.126/本社/営業/営業2部/個人フォルダ/竹村/カーソル/三幸商事株式会社\" push origin master --verbose)",
       "Bash(echo \"EXIT: $?\")",
       "Bash(powershell -Command \"Remove-Item '\\\\\\\\\\\\\\\\192.168.1.126\\\\\\\\本社\\\\\\\\営業\\\\\\\\営業2部\\\\\\\\個人フォルダ\\\\\\\\竹村\\\\\\\\カーソル\\\\\\\\三幸商事株式会社\\\\\\\\.git\\\\\\\\index.lock' -Force\")",
-      "mcp__asana__asana_list_workspaces"
+      "mcp__asana__asana_list_workspaces",
+      "Bash(cp /home/user/sho/.mcp.json /home/user/sho/.mcp.json.example)",
+      "Bash(git rm *)"
     ],
     "defaultMode": "bypassPermissions",
     "additionalDirectories": [
