@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(powershell -Command \"[System.Environment]::GetEnvironmentVariable\\(''ASANA_ACCESS_TOKEN'', ''User''\\); [System.Environment]::GetEnvironmentVariable\\(''GMAIL_APP_PASSWORD'', ''User''\\)\")",
+      "Read(//c/Users/FONE/plaud-toolkit/**)",
+      "Read(///192.168.1.126/本社/営業/営業2部/個人フォルダ/竹村/カーソル/三幸商事株式会社/鉄鋼事業部/**)"
+    ],
+    "additionalDirectories": [
+      "\\\\192.168.1.126\\本社\\営業\\営業2部\\個人フォルダ\\竹村\\カーソル\\三幸商事株式会社\\鉄鋼事業部\\営業",
+      "C:\\Users\\FONE\\.claude"
+    ]
+  }
+}
