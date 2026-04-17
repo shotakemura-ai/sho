@@ -99,6 +99,30 @@ FAX (06)6541-3588
 └── 法務部/                         ← 契約書
 ```
 
+## 営業2部 組織構成
+
+```
+営業2部/
+├── 非缶材課/         ← 缶バッジ・ブリキ材・ECサイト・SNS・マーケティング
+│   ├── カレンダー係/
+│   └── 仕入先/       ← 缶バッジ仕入先管理
+└── 一般薄板課/       ← 薄板鋼材・営業・マーケティング
+    ├── シャーリング係/
+    ├── 仲間係/
+    ├── 自動車係/
+    ├── 在庫/
+    └── 仕入先/       ← 鉄鋼仕入先管理
+```
+
+## ルーティング指示
+
+- タスク管理 → `context/asana.md` を読んで Asana MCP ツールで対応
+- スケジュール → `context/google_calendar.md` を読んで iCal 取得
+- メール → `context/gmail.md` を読んで IMAP 接続
+- Drive操作 → `context/google_api.md` を読んで `google_drive.py` 実行
+- 会議・商談記録 → `context/plaud.md` を読んで Plaud録音DB を Grep
+- 部門固有ルール → 各サブディレクトリの CLAUDE.md 参照
+
 ## Claude Code への指示
 
 - 書類生成を依頼されたら、`templates/` の雛形をベースに `context/` と `me.md` を参照して埋める。

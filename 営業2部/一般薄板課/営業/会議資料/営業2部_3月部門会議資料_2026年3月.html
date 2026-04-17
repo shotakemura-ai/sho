@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>営業2部 3月部門会議資料 2026年3月</title>
+<style>
+/* ========================================
+   全体設定（16:9 プロジェクター向け）
+======================================== */
+*, *::before, *::after { margin:0; padding:0; box-sizing:border-box; }
+
+:root {
+  --navy:  #0d2654;
+  --blue:  #1e5096;
+  --lblue: #3a78c8;
+  --teal:  #0a8080;
+  --green: #1a6b3a;
+  --red:   #9a1818;
+  --orange:#b85a00;
+  --gold:  #c8a000;
+  --bg:    #1a1a2e;
+  --slide-w: 1280px;
+  --slide-h: 720px;
+}
+
+body {
+  background: #111;
+  font-family: 'Yu Gothic UI', 'Meiryo UI', 'Meiryo', 'Yu Gothic', sans-serif;
+  color: #fff;
+}
+
+/* ---- スライド共通 ---- */
+.slide {
+  width:  var(--slide-w);
+  height: var(--slide-h);
+  margin: 20px auto;
+  position: relative;
+  overflow: hidden;
+  background: #0d1a3a;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 40px rgba(0,0,0,.7);
+  page-break-after: always;
+}
+
+/* 上部ヘッダーバー */
+.slide-bar {
+  height: 8px;
+  background: linear-gradient(90deg, #1e5096, #3a78c8, #0a8080);
+  flex-shrink: 0;
+}
+
+/* ヘッダー領域 */
+.slide-header {
+  padding: 22px 60px 14px;
+  border-bottom: 1px solid rgba(255,255,255,.12);
+  flex-shrink: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+}
+.slide-title {
+  font-size: 30px;
+  font-weight: bold;
+  color: #a0c8ff;
+  letter-spacing: 1px;
+}
+.slide-sub {
+  font-size: 16px;
+  color: #7090b0;
+  margin-top: 4px;
+}
+.slide-num {
+  font-size: 14px;
+  color: #506080;
+}
+
+/* コンテンツ領域 */
+.slide-body {
+  flex: 1;
+  padding: 20px 60px 20px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* フッター */
+.slide-foot {
+  padding: 8px 60px;
+  border-top: 1px solid rgba(255,255,255,.08);
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: #405060;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   表紙スライド
+======================================== */
+.slide.cover {
+  background: radial-gradient(ellipse at 30% 50%, #1e3a78 0%, #0d1a3a 60%);
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+.cover .corp-name {
+  font-size: 18px;
+  letter-spacing: 5px;
+  color: #6090c0;
+  margin-bottom: 24px;
+}
+.cover .main-title {
+  font-size: 62px;
+  font-weight: bold;
+  color: #fff;
+  letter-spacing: 8px;
+  line-height: 1.1;
+  margin-bottom: 16px;
+  text-shadow: 0 0 40px rgba(60,120,200,.5);
+}
+.cover .sub-title {
+  font-size: 26px;
+  color: #7ab8f8;
+  margin-bottom: 36px;
+  letter-spacing: 3px;
+}
+.cover .badge {
+  display: inline-block;
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.25);
+  padding: 10px 40px;
+  border-radius: 30px;
+  font-size: 20px;
+  color: #a0c8ff;
+  margin-bottom: 16px;
+}
+.cover .presenter {
+  font-size: 16px;
+  color: #5080a0;
+  margin-top: 20px;
+}
+.cover-deco {
+  position: absolute;
+  width: 600px; height: 600px;
+  border: 1px solid rgba(60,120,200,.15);
+  border-radius: 50%;
+  top: -100px; right: -100px;
+  pointer-events: none;
+}
+.cover-deco2 {
+  position: absolute;
+  width: 400px; height: 400px;
+  border: 1px solid rgba(60,120,200,.1);
+  border-radius: 50%;
+  bottom: -80px; left: -80px;
+  pointer-events: none;
+}
+
+/* ========================================
+   アジェンダ
+======================================== */
+.agenda-list { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.agenda-list li {
+  display: flex; align-items: center;
+  background: rgba(255,255,255,.05);
+  border-left: 5px solid #3a78c8;
+  border-radius: 0 8px 8px 0;
+  padding: 14px 24px;
+  font-size: 22px;
+}
+.agenda-list li .num {
+  width: 36px;
+  font-size: 26px;
+  font-weight: bold;
+  color: #3a78c8;
+  margin-right: 18px;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   KPIカード
+======================================== */
+.kpi-row {
+  display: flex;
+  gap: 16px;
+}
+.kpi-card {
+  flex: 1;
+  background: rgba(255,255,255,.05);
+  border-radius: 12px;
+  padding: 20px 16px;
+  text-align: center;
+  border: 1px solid rgba(255,255,255,.1);
+}
+.kpi-card.prev  { border-top: 4px solid #5a7aab; }
+.kpi-card.plan  { border-top: 4px solid #3a78c8; }
+.kpi-card.pred  { border-top: 4px solid #c83a3a; }
+.kpi-card.pred-ok{ border-top: 4px solid #2ab864; }
+.kpi-lbl  { font-size: 15px; color: #7090b0; margin-bottom: 8px; }
+.kpi-val  { font-size: 42px; font-weight: bold; line-height: 1; }
+.kpi-unit { font-size: 16px; color: #7090b0; margin-top: 4px; }
+.kpi-sub  { font-size: 14px; margin-top: 6px; }
+.kpi-card.prev .kpi-val  { color: #90aad0; }
+.kpi-card.plan .kpi-val  { color: #a0c8ff; }
+.kpi-card.pred .kpi-val  { color: #ff8080; }
+.kpi-card.pred-ok .kpi-val { color: #60e0a0; }
+
+/* ========================================
+   棒グラフ（横）
+======================================== */
+.chart-container { flex: 1; display: flex; flex-direction: column; gap: 8px; }
+.chart-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.chart-label {
+  width: 72px;
+  text-align: right;
+  font-size: 20px;
+  font-weight: bold;
+  color: #a0c0e0;
+  flex-shrink: 0;
+}
+.chart-track {
+  flex: 1;
+  height: 44px;
+  background: rgba(255,255,255,.06);
+  border-radius: 6px;
+  position: relative;
+  overflow: hidden;
+}
+.bar-fill {
+  position: absolute;
+  top: 0; left: 0;
+  height: 100%;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding-right: 12px;
+  justify-content: flex-end;
+  font-size: 18px;
+  font-weight: bold;
+  color: #fff;
+  transition: width .3s;
+  white-space: nowrap;
+}
+.bar-fill.prev  { background: rgba(90,122,171,.5); }
+.bar-fill.plan  { background: rgba(58,120,200,.6); }
+.bar-fill.pred  { background: linear-gradient(90deg, #1a3a70, #9a1818); }
+.bar-fill.pred-ok { background: linear-gradient(90deg, #1a3a70, #1a6b3a); }
+/* 計画ラインマーカー */
+.plan-line {
+  position: absolute;
+  top: 0; bottom: 0;
+  width: 3px;
+  background: rgba(255,255,0,.5);
+  border-right: 1px dashed rgba(255,255,0,.3);
+}
+.chart-pct {
+  width: 90px;
+  text-align: right;
+  font-size: 22px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+/* ========================================
+   達成率グラフ（人別）
+======================================== */
+.person-chart { display: flex; flex-direction: column; gap: 14px; }
+.person-row { display: flex; align-items: center; gap: 14px; }
+.person-name {
+  width: 64px; text-align: right;
+  font-size: 22px; font-weight: bold; color: #a0c0e0;
+  flex-shrink: 0;
+}
+.person-track {
+  flex: 1; height: 52px;
+  background: rgba(255,255,255,.06);
+  border-radius: 8px;
+  position: relative; overflow: hidden;
+}
+.person-bar {
+  position: absolute; top: 0; left: 0; height: 100%;
+  border-radius: 8px;
+  display: flex; align-items: center;
+  padding: 0 14px;
+  font-size: 19px; font-weight: bold; color: #fff;
+  white-space: nowrap;
+  justify-content: flex-end;
+}
+.person-bar.good { background: linear-gradient(90deg, #0d3a20, #1a8040); }
+.person-bar.warn { background: linear-gradient(90deg, #2a2a00, #8a7000); }
+.person-bar.bad  { background: linear-gradient(90deg, #3a0d0d, #8a2020); }
+.person-goal {
+  position: absolute; top: 0; bottom: 0; width: 3px;
+  background: rgba(255,220,0,.6);
+}
+.person-pct {
+  width: 100px; text-align: right;
+  font-size: 24px; font-weight: bold;
+  flex-shrink: 0;
+}
+.person-task {
+  flex: 0 0 340px;
+  font-size: 15px; color: #8090a8;
+  padding-left: 10px;
+  border-left: 2px solid rgba(255,255,255,.1);
+  line-height: 1.5;
+}
+
+/* ========================================
+   テーブル（大文字プレゼン用）
+======================================== */
+.big-table { width: 100%; border-collapse: collapse; }
+.big-table th {
+  background: rgba(30,80,150,.6);
+  color: #a0c8ff;
+  padding: 10px 14px;
+  font-size: 16px;
+  text-align: center;
+  border-bottom: 2px solid rgba(58,120,200,.4);
+}
+.big-table th.sub { background: rgba(20,60,120,.5); font-size: 14px; }
+.big-table td {
+  padding: 9px 14px;
+  border-bottom: 1px solid rgba(255,255,255,.07);
+  font-size: 17px;
+  text-align: right;
+}
+.big-table td.lbl {
+  text-align: left;
+  font-size: 18px;
+  font-weight: bold;
+  color: #c0d8f0;
+}
+.big-table tr.sum td {
+  background: rgba(30,80,150,.4);
+  border-top: 2px solid rgba(58,120,200,.5);
+  font-size: 18px;
+  font-weight: bold;
+  color: #a0c8ff;
+}
+.big-table tr.sum td.lbl { color: #a0c8ff; }
+.big-table tbody tr:hover td { background: rgba(255,255,255,.04); }
+
+/* ========================================
+   バッジ
+======================================== */
+.ok   { color: #40e080; font-weight: bold; }
+.warn { color: #e0c040; font-weight: bold; }
+.bad  { color: #e05050; font-weight: bold; }
+.b-ok   { background: rgba(40,200,100,.15); border-radius: 4px; padding: 2px 8px; }
+.b-warn { background: rgba(200,180,0,.15);  border-radius: 4px; padding: 2px 8px; }
+.b-bad  { background: rgba(200,50,50,.15);  border-radius: 4px; padding: 2px 8px; }
+
+/* ========================================
+   ハイライトボックス
+======================================== */
+.hbox {
+  border-radius: 10px;
+  padding: 14px 20px;
+  font-size: 18px;
+  line-height: 1.7;
+}
+.hbox.red    { background: rgba(180,40,40,.18); border: 1px solid rgba(200,80,80,.35); }
+.hbox.green  { background: rgba(30,150,80,.15); border: 1px solid rgba(50,180,100,.3); }
+.hbox.blue   { background: rgba(30,100,200,.15); border: 1px solid rgba(60,130,220,.3); }
+.hbox.orange { background: rgba(180,120,0,.18); border: 1px solid rgba(210,150,30,.35); }
+.hbox b { font-size: 20px; }
+.hbox.red b   { color: #ff9090; }
+.hbox.green b { color: #60e0a0; }
+.hbox.blue b  { color: #80c8ff; }
+.hbox.orange b{ color: #ffc840; }
+
+/* ========================================
+   2カラム・3カラム
+======================================== */
+.col2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+.col3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+
+/* ========================================
+   セクションラベル
+======================================== */
+.sec {
+  font-size: 17px;
+  font-weight: bold;
+  color: #6090c0;
+  border-left: 4px solid #3a78c8;
+  padding-left: 10px;
+  margin-bottom: 6px;
+}
+
+/* ========================================
+   グループ別グラフ用
+======================================== */
+.group-chart { display: flex; flex-direction: column; gap: 10px; }
+.group-row { display: flex; align-items: center; gap: 10px; }
+.group-name {
+  width: 130px; font-size: 18px; font-weight: bold;
+  color: #a0c0e0; text-align: right; flex-shrink: 0;
+}
+.group-bars { flex: 1; display: flex; flex-direction: column; gap: 4px; }
+.g-bar-row { display: flex; align-items: center; gap: 6px; height: 22px; }
+.g-bar-lbl { width: 40px; font-size: 13px; color: #6080a0; text-align: right; flex-shrink: 0; }
+.g-bar-track { flex: 1; height: 22px; background: rgba(255,255,255,.05); border-radius: 4px; position: relative; overflow: hidden; }
+.g-fill { position: absolute; top:0; left:0; height:100%; border-radius:4px; display:flex; align-items:center; padding-right:8px; justify-content:flex-end; font-size:13px; font-weight:bold; white-space:nowrap; }
+.g-fill.prev { background: rgba(80,110,170,.45); }
+.g-fill.plan { background: rgba(58,120,200,.55); }
+.g-fill.pred { background: rgba(180,60,60,.55); }
+.g-fill.pred-ok { background: rgba(40,160,80,.55); }
+.g-pct { width: 80px; text-align:right; font-size:18px; font-weight:bold; flex-shrink:0; }
+
+/* ========================================
+   新規拡販カード
+======================================== */
+.new-cards { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; }
+.new-card {
+  background: rgba(30,80,150,.2);
+  border: 1px solid rgba(60,120,220,.3);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.new-card .company { font-size: 19px; font-weight: bold; color: #80c8ff; margin-bottom: 4px; }
+.new-card .person  { font-size: 14px; color: #5080a0; margin-bottom: 8px; }
+.new-card .detail  { font-size: 16px; color: #c0d0e0; line-height: 1.6; }
+
+/* ========================================
+   トピックボックス
+======================================== */
+.topic-box {
+  background: rgba(180,120,0,.15);
+  border: 1px solid rgba(210,160,40,.3);
+  border-radius: 10px;
+  padding: 16px 20px;
+  font-size: 19px;
+  line-height: 1.8;
+  color: #f0d880;
+}
+.topic-box .topic-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #ffc840;
+  margin-bottom: 8px;
+}
+
+@media print {
+  body { background: white; }
+  .slide {
+    margin: 0;
+    box-shadow: none;
+    width: 100%;
+    height: auto;
+    min-height: 210mm;
+    background: #0d1a3a !important;
+  }
+}
+</style>
+</head>
+<body>
+
+<!-- ========================================
+     スライド 1 ： 表紙
+======================================== -->
+<div class="slide cover">
+  <div class="cover-deco"></div>
+  <div class="cover-deco2"></div>
+  <div class="slide-bar" style="position:absolute;top:0;left:0;right:0;"></div>
+  <div class="corp-name">三幸商事株式会社 ｜ SANKO SHOJI CO., LTD.</div>
+  <div class="main-title">営業２部<br>部門会議</div>
+  <div class="sub-title">2026年３月度　実績報告 &amp; 計画</div>
+  <div class="badge">2026年3月19日（木）</div>
+  <div class="presenter">営業部　竹村　翔</div>
+</div>
+
+<!-- ========================================
+     スライド 2 ： アジェンダ
+======================================== -->
+<div class="slide">
+  <div class="slide-bar"></div>
+  <div class="slide-header">
+    <div>
+      <div class="slide-title">本日のアジェンダ</div>
+    </div>
+    <div class="slide-num">2 / 7</div>
+  </div>
+  <div class="slide-body" style="justify-content:center;">
+    <ul class="agenda-list">
+      <li><span class="num">①</span>部門サマリー　―　前年比・計画比・KPI</li>
+      <li><span class="num">②</span>担当者別　実績・計画・予想・個別課題</li>
+      <li><span class="num">③</span>グループ別（品種別）　実績・計画・予想</li>
+      <li><span class="num">④</span>顧客情報（主要得意先）</li>
+      <li><span class="num">⑤</span>在庫状況</li>
+      <li><span class="num">⑥</span>新規拡販・トピックス</li>
+    </ul>
+  </div>
+  <div class="slide-foot">
+    <span>三幸商事株式会社 営業2部 部門会議資料</span>
+    <span>2026年3月19日</span>
+  </div>
+</div>
+
+<!-- ========================================
+     スライド 3 ： 部門サマリー（KPI + 棒グラフ）
+======================================== -->
+<div class="slide">
+  <div class="slide-bar"></div>
+  <div class="slide-header">
+    <div>
+      <div class="slide-title">部門サマリー　— 営業２部　3月</div>
+      <div class="slide-sub">前年3月実績 ／ 3月計画 ／ 3月予想</div>
+    </div>
+    <div class="slide-num">3 / 7</div>
+  </div>
+  <div class="slide-body">
+
+    <!-- KPIカード 3列 -->
+    <div class="kpi-row" style="gap:12px;">
+      <!-- 重量 -->
+      <div style="flex:1; background:rgba(255,255,255,.04); border-radius:12px; padding:16px; border-top:4px solid #3a78c8;">
+        <div class="kpi-lbl" style="font-size:16px; color:#6090b0; margin-bottom:6px;">重量（t）</div>
+        <div style="display:flex; gap:16px; align-items:flex-end;">
+          <div style="flex:1; text-align:center;">
+            <div style="font-size:13px;color:#5a7aab;">前年実績</div>
+            <div style="font-size:32px;font-weight:bold;color:#7090c0;">881</div>
+            <div style="font-size:13px;color:#5a7aab;">t</div>
+          </div>
+          <div style="font-size:26px;color:#304060;">→</div>
+          <div style="flex:1; text-align:center;">
+            <div style="font-size:13px;color:#4a90e0;">3月計画</div>
+            <div style="font-size:32px;font-weight:bold;color:#80b8ff;">1,013</div>
+            <div style="font-size:13px;color:#4a90e0;">t</div>
+          </div>
+          <div style="font-size:26px;color:#304060;">→</div>
+          <div style="flex:1; text-align:center;">
+            <div style="font-size:13px;color:#e06060;">3月予想</div>
+            <div style="font-size:38px;font-weight:bold;color:#ff8080;">831</div>
+            <div style="font-size:13px;color:#e06060;">t</div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:6px;font-size:15px;color:#e06060;">計画比 <b style="font-size:20px;">82%</b></div>
+      </div>
+      <!-- 売上 -->
+      <div style="flex:1; background:rgba(255,255,255,.04); border-radius:12px; padding:16px; border-top:4px solid #0a8080;">
+        <div class="kpi-lbl" style="font-size:16px; color:#6090b0; margin-bottom:6px;">売上金額（万円）</div>
+        <div style="display:flex; gap:16px; align-items:flex-end;">
+          <div style="flex:1; text-align:center;">
+            <div style="font-size:13px;color:#5a7aab;">前年実績</div>
+            <div style="font-size:28px;font-weight:bold;color:#7090c0;">24,074</div>
+          </div>
+          <div style="font-size:26px;color:#304060;">→</div>
+          <div style="flex:1; text-align:center;">
+            <div style="font-size:13px;color:#4a90e0;">3月計画</div>
+            <div style="font-size:28px;font-weight:bold;color:#80b8ff;">24,376</div>
+          </div>
+          <div style="font-size:26px;color:#304060;">→</div>
+          <div style="flex:1; text-align:center;">
+            <div style="font-size:13px;color:#e06060;">3月予想</div>
+            <div style="font-size:34px;font-weight:bold;color:#ff8080;">19,430</div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:6px;font-size:15px;color:#e06060;">計画比 <b style="font-size:20px;">80%</b></div>
+      </div>
+      <!-- 粗利 -->
+      <div style="flex:1; background:rgba(255,255,255,.04); border-radius:12px; padding:16px; border-top:4px solid #c83a3a;">
+        <div class="kpi-lbl" style="font-size:16px; color:#6090b0; margin-bottom:6px;">粗利益（万円）</div>
+        <div style="display:flex; gap:16px; align-items:flex-end;">
+          <div style="flex:1; text-align:center;">
+            <div style="font-size:13px;color:#5a7aab;">前年実績</div>
+            <div style="font-size:30px;font-weight:bold;color:#7090c0;">3,434</div>
+          </div>
+          <div style="font-size:26px;color:#304060;">→</div>
+          <div style="flex:1; text-align:center;">
+            <div style="font-size:13px;color:#4a90e0;">3月計画</div>
+            <div style="font-size:30px;font-weight:bold;color:#80b8ff;">3,470</div>
+          </div>
+          <div style="font-size:26px;color:#304060;">→</div>
+          <div style="flex:1; text-align:center;">
+            <div style="font-size:13px;color:#e06060;">3月予想</div>
+            <div style="font-size:46px;font-weight:bold;color:#ff6060;line-height:1;">2,515</div>
+            <div style="font-size:13px;color:#e06060;">万円</div>
+          </div>
+        </div>
+        <div style="text-align:center;margin-top:4px;font-size:15px;color:#e06060;">計画比 <b style="font-size:24px;color:#ff5050;">72.5%</b> <span style="font-size:16px;">▲955万円</span></div>
+      </div>
+    </div>
+
+    <!-- 粗利 3本棒グラフ -->
+    <div style="background:rgba(255,255,255,.03); border-radius:10px; padding:16px 24px;">
+      <div class="sec" style="margin-bottom:12px;">粗利益 比較グラフ（万円）</div>
+      <div class="chart-container" style="gap:14px;">
+        <div class="chart-row">
+          <div class="chart-label" style="width:90px;font-size:16px;">前年実績</div>
+          <div class="chart-track" style="height:48px;">
+            <div class="bar-fill prev" style="width:calc(3434/3470*100%);">
+              <span>3,434万</span>
+            </div>
+          </div>
+          <div class="chart-pct" style="color:#7090c0;font-size:18px;">前年</div>
+        </div>
+        <div class="chart-row">
+          <div class="chart-label" style="width:90px;font-size:16px;">3月計画</div>
+          <div class="chart-track" style="height:48px;">
+            <div class="bar-fill plan" style="width:100%;">
+              <span>3,470万</span>
+            </div>
+          </div>
+          <div class="chart-pct" style="color:#80b8ff;font-size:18px;">100%</div>
+        </div>
+        <div class="chart-row">
+          <div class="chart-label" style="width:90px;font-size:16px;">3月予想</div>
+          <div class="chart-track" style="height:48px;">
+            <div class="bar-fill pred" style="width:calc(2515/3470*100%);">
+              <span>2,515万</span>
+            </div>
+            <div class="plan-line" style="left:100%;"></div>
+          </div>
+          <div class="chart-pct" style="color:#ff6060;font-size:22px;">72.5%</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hbox red" style="font-size:18px; padding:12px 20px;">
+      <b>⚠ 3月予想：計画比72.5%（▲955万円）</b>　—　竹原・畠中・的場の挽回が急務。船吉のみ計画超過（107%）。
+    </div>
+  </div>
+  <div class="slide-foot">
+    <span>三幸商事株式会社 営業2部 部門会議資料</span><span>2026年3月19日</span>
+  </div>
+</div>
+
+<!-- ========================================
+     スライド 4 ： 担当者別（達成率グラフ＋課題）
+======================================== -->
+<div class="slide">
+  <div class="slide-bar"></div>
+  <div class="slide-header">
+    <div>
+      <div class="slide-title">担当者別　3月予想 vs 計画（粗利）</div>
+      <div class="slide-sub">黄色点線＝計画100%ライン　　単位：万円</div>
+    </div>
+    <div class="slide-num">4 / 7</div>
+  </div>
+  <div class="slide-body" style="gap:10px;">
+
+    <div class="person-chart">
+
+      <!-- 的場 -->
+      <div class="person-row">
+        <div class="person-name">的場</div>
+        <div class="person-track">
+          <div class="person-bar bad" style="width:calc(239/740*100%)">
+            予想 239万
+          </div>
+          <div class="person-goal" style="left:calc(333/740*100%)"></div>
+        </div>
+        <div class="person-pct bad b-bad">71.8%</div>
+        <div class="person-task">計画333万 → 予想239万（▲94万）<br>新規：花谷工業へアプローチ</div>
+      </div>
+
+      <!-- 新木 -->
+      <div class="person-row">
+        <div class="person-name">新木</div>
+        <div class="person-track">
+          <div class="person-bar warn" style="width:calc(480/740*100%)">
+            予想 480万
+          </div>
+          <div class="person-goal" style="left:calc(500/740*100%)"></div>
+        </div>
+        <div class="person-pct warn b-warn">96.0%</div>
+        <div class="person-task">計画500万 → 予想480万（▲20万）<br>旧在庫削減・新単価仕入れ体制の構築</div>
+      </div>
+
+      <!-- 竹原 -->
+      <div class="person-row">
+        <div class="person-name">竹原</div>
+        <div class="person-track">
+          <div class="person-bar bad" style="width:calc(700/1305*82%)">
+            予想 700万
+          </div>
+          <div class="person-goal" style="left:calc(1305/1305*82%)"></div>
+        </div>
+        <div class="person-pct bad b-bad">53.6%</div>
+        <div class="person-task">計画1,305万 → 予想700万（▲605万）<br>⚠ 最大の懸念。シェアアップ・協力会社拡充</div>
+      </div>
+
+      <!-- 船吉 -->
+      <div class="person-row">
+        <div class="person-name">船吉</div>
+        <div class="person-track">
+          <div class="person-bar good" style="width:calc(495/740*100%)">
+            予想 495万
+          </div>
+          <div class="person-goal" style="left:calc(462/740*100%)"></div>
+        </div>
+        <div class="person-pct ok b-ok">107.1%</div>
+        <div class="person-task">計画462万 → 予想495万（+33万）<br>◎ 計画超過。製缶フロー明確化を推進</div>
+      </div>
+
+      <!-- 畠中 -->
+      <div class="person-row">
+        <div class="person-name">畠中</div>
+        <div class="person-track">
+          <div class="person-bar bad" style="width:calc(472/740*100%)">
+            予想 472万
+          </div>
+          <div class="person-goal" style="left:calc(740/740*100%)"></div>
+        </div>
+        <div class="person-pct bad b-bad">63.8%</div>
+        <div class="person-task">計画740万 → 予想472万（▲268万）<br>新規対応強化・既存顧客フォローアップ</div>
+      </div>
+
+      <!-- 合計 -->
+      <div class="person-row" style="border-top:1px solid rgba(255,255,255,.15); padding-top:10px; margin-top:2px;">
+        <div class="person-name" style="color:#80b8ff;">合計</div>
+        <div class="person-track">
+          <div class="person-bar" style="width:calc(2386/3340*100%); background:linear-gradient(90deg,#1a2a50,#6a2020);">
+            予想 2,386万
+          </div>
+          <div class="person-goal" style="left:calc(3340/3340*100%)"></div>
+        </div>
+        <div class="person-pct bad b-bad" style="font-size:26px;">71.4%</div>
+        <div class="person-task" style="font-size:17px;color:#c0d0e0;">計画3,340万 → 予想2,386万<br>（▲954万円）</div>
+      </div>
+    </div>
+
+    <div style="font-size:15px; color:#506070; text-align:right;">
+      ※黄色点線＝計画100%ライン　　前年3月実績（参考）：3,378万円
+    </div>
+  </div>
+  <div class="slide-foot">
+    <span>三幸商事株式会社 営業2部 部門会議資料</span><span>2026年3月19日</span>
+  </div>
+</div>
+
+<!-- ========================================
+     スライド 5 ： グループ別（品種別）グラフ
+======================================== -->
+<div class="slide">
+  <div class="slide-bar"></div>
+  <div class="slide-header">
+    <div>
+      <div class="slide-title">グループ別（品種別）　実績・計画・予想</div>
+      <div class="slide-sub">粗利（万円）　青＝前年実績　水色＝3月計画　赤/緑＝3月予想</div>
+    </div>
+    <div class="slide-num">5 / 7</div>
+  </div>
+  <div class="slide-body" style="gap:14px;">
+
+    <div class="group-chart">
+
+      <!-- 非缶材 -->
+      <div class="group-row">
+        <div class="group-name">② 非缶材</div>
+        <div class="group-bars">
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">前年</div>
+            <div class="g-bar-track"><div class="g-fill prev" style="width:calc(2368/2368*82%)">2,368万</div></div>
+          </div>
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">計画</div>
+            <div class="g-bar-track"><div class="g-fill plan" style="width:calc(2292/2368*82%)">2,292万</div></div>
+          </div>
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">予想</div>
+            <div class="g-bar-track"><div class="g-fill pred" style="width:calc(1547/2368*82%)">1,547万</div></div>
+          </div>
+        </div>
+        <div class="g-pct bad b-bad">67.5%</div>
+      </div>
+
+      <!-- 一般薄板 -->
+      <div class="group-row">
+        <div class="group-name">③ 一般薄板</div>
+        <div class="group-bars">
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">前年</div>
+            <div class="g-bar-track"><div class="g-fill prev" style="width:calc(648/2368*82%)">648万</div></div>
+          </div>
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">計画</div>
+            <div class="g-bar-track"><div class="g-fill plan" style="width:calc(860/2368*82%)">860万</div></div>
+          </div>
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">予想</div>
+            <div class="g-bar-track"><div class="g-fill pred" style="width:calc(574/2368*82%)">574万</div></div>
+          </div>
+        </div>
+        <div class="g-pct bad b-bad">66.7%</div>
+      </div>
+
+      <!-- シャーリング -->
+      <div class="group-row">
+        <div class="group-name">④ ｼｬｰﾘﾝｸﾞ</div>
+        <div class="group-bars">
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">前年</div>
+            <div class="g-bar-track"><div class="g-fill prev" style="width:calc(169/2368*82%)">169万</div></div>
+          </div>
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">計画</div>
+            <div class="g-bar-track"><div class="g-fill plan" style="width:calc(153/2368*82%)">153万</div></div>
+          </div>
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">予想</div>
+            <div class="g-bar-track"><div class="g-fill pred-ok" style="width:calc(182/2368*82%)">182万</div></div>
+          </div>
+        </div>
+        <div class="g-pct ok b-ok">118.9%</div>
+      </div>
+
+      <!-- 仲間 -->
+      <div class="group-row">
+        <div class="group-name">⑤ 仲間</div>
+        <div class="group-bars">
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">前年</div>
+            <div class="g-bar-track"><div class="g-fill prev" style="width:calc(193/2368*82%)">193万</div></div>
+          </div>
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">計画</div>
+            <div class="g-bar-track"><div class="g-fill plan" style="width:calc(109/2368*82%)">109万</div></div>
+          </div>
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">予想</div>
+            <div class="g-bar-track"><div class="g-fill pred-ok" style="width:calc(131/2368*82%)">131万</div></div>
+          </div>
+        </div>
+        <div class="g-pct ok b-ok">120.2%</div>
+      </div>
+
+      <!-- 自動車 -->
+      <div class="group-row">
+        <div class="group-name">⑥ 自動車</div>
+        <div class="group-bars">
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">前年</div>
+            <div class="g-bar-track"><div class="g-fill prev" style="width:calc(55/2368*82%)">55万</div></div>
+          </div>
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">計画</div>
+            <div class="g-bar-track"><div class="g-fill plan" style="width:calc(56/2368*82%)">56万</div></div>
+          </div>
+          <div class="g-bar-row">
+            <div class="g-bar-lbl">予想</div>
+            <div class="g-bar-track"><div class="g-fill pred-ok" style="width:calc(80/2368*82%)">80万</div></div>
+          </div>
+        </div>
+        <div class="g-pct ok b-ok">142.9%</div>
+      </div>
+
+    </div>
+
+    <div class="col2" style="gap:14px;">
+      <div class="hbox red" style="font-size:17px; padding:12px 16px;">
+        <b>要注意</b>：非缶材（67%）・薄板（67%）が計画大幅未達。<br>
+        2品種合計で全粗利の<b>84%</b>を占める主力品種。
+      </div>
+      <div class="hbox green" style="font-size:17px; padding:12px 16px;">
+        <b>好調</b>：シャーリング（119%）・仲間（120%）・自動車（143%）<br>
+        建築向け需要回復・興亜産業等の取引増加が貢献。
+      </div>
+    </div>
+
+  </div>
+  <div class="slide-foot">
+    <span>三幸商事株式会社 営業2部 部門会議資料</span><span>2026年3月19日</span>
+  </div>
+</div>
+
+<!-- ========================================
+     スライド 6 ： 顧客情報（主要得意先）
+======================================== -->
+<div class="slide">
+  <div class="slide-bar"></div>
+  <div class="slide-header">
+    <div>
+      <div class="slide-title">顧客情報　― 主要得意先別（粗利：万円）</div>
+      <div class="slide-sub">非缶材 ／ 一般薄板 ／ シャーリング ／ 仲間</div>
+    </div>
+    <div class="slide-num">6 / 7</div>
+  </div>
+  <div class="slide-body" style="gap:12px;">
+    <div class="col2" style="gap:16px; flex:1;">
+
+      <!-- 非缶材テーブル -->
+      <div>
+        <div class="sec">② 非缶材（缶バッジ・加工）</div>
+        <table class="big-table">
+          <thead>
+            <tr>
+              <th style="text-align:left;font-size:15px;">得意先</th>
+              <th style="background:rgba(70,100,160,.5);font-size:14px;">前年粗利</th>
+              <th style="font-size:14px;">計画粗利</th>
+              <th style="background:rgba(150,50,50,.5);font-size:14px;">予想粗利</th>
+              <th style="background:rgba(80,40,120,.5);font-size:14px;">計画比</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td class="lbl">三幸P東大阪</td><td>304</td><td>570</td><td>359</td><td><span class="b-warn warn">63%</span></td></tr>
+            <tr><td class="lbl">三幸P松原</td><td>122</td><td>170</td><td>105</td><td><span class="b-warn warn">62%</span></td></tr>
+            <tr><td class="lbl">ダイキ</td><td>303</td><td>330</td><td>25</td><td><span class="b-bad bad">8%</span></td></tr>
+            <tr><td class="lbl">ベック</td><td>210</td><td>200</td><td>140</td><td><span class="b-warn warn">70%</span></td></tr>
+            <tr><td class="lbl">ファイン技研</td><td>116</td><td>200</td><td>70</td><td><span class="b-bad bad">35%</span></td></tr>
+            <tr><td class="lbl">P松原製品(船吉)</td><td>722</td><td>462</td><td>288</td><td><span class="b-warn warn">62%</span></td></tr>
+            <tr class="sum"><td class="lbl">非缶材 計</td><td>2,368</td><td>2,292</td><td>1,547</td><td><span class="bad">67.5%</span></td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- 薄板・シャーリング・仲間テーブル -->
+      <div style="display:flex; flex-direction:column; gap:10px;">
+        <div>
+          <div class="sec">③ 一般薄板（主要先）</div>
+          <table class="big-table">
+            <thead>
+              <tr>
+                <th style="text-align:left;font-size:15px;">得意先</th>
+                <th style="background:rgba(70,100,160,.5);font-size:14px;">前年粗利</th>
+                <th style="font-size:14px;">計画粗利</th>
+                <th style="background:rgba(150,50,50,.5);font-size:14px;">予想粗利</th>
+                <th style="background:rgba(80,40,120,.5);font-size:14px;">計画比</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="lbl">向陽技研</td><td>47</td><td>110</td><td>25</td><td><span class="b-bad bad">23%</span></td></tr>
+              <tr><td class="lbl">キョウエイ</td><td>40</td><td>80</td><td>50</td><td><span class="b-warn warn">63%</span></td></tr>
+              <tr><td class="lbl">栄住産業</td><td>53</td><td>95</td><td>81</td><td><span class="b-ok ok">85%</span></td></tr>
+              <tr class="sum"><td class="lbl">薄板 計</td><td>648</td><td>860</td><td>574</td><td><span class="bad">66.7%</span></td></tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="col2" style="gap:10px;">
+          <div>
+            <div class="sec">④ シャーリング</div>
+            <table class="big-table">
+              <thead>
+                <tr>
+                  <th style="text-align:left;font-size:14px;">得意先</th>
+                  <th style="font-size:13px;">計画</th>
+                  <th style="background:rgba(40,140,80,.4);font-size:13px;">予想</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="lbl" style="font-size:15px;">井上鋼板</td><td>40</td><td class="ok">33</td></tr>
+                <tr><td class="lbl" style="font-size:15px;">山本シャー</td><td>50</td><td class="ok">66</td></tr>
+                <tr><td class="lbl" style="font-size:15px;">廣栄シャー</td><td>15</td><td class="ok">38</td></tr>
+                <tr class="sum"><td class="lbl" style="font-size:15px;">計</td><td>153</td><td class="ok">182</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div>
+            <div class="sec">⑤ 仲間</div>
+            <table class="big-table">
+              <thead>
+                <tr>
+                  <th style="text-align:left;font-size:14px;">得意先</th>
+                  <th style="font-size:13px;">計画</th>
+                  <th style="background:rgba(40,140,80,.4);font-size:13px;">予想</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td class="lbl" style="font-size:15px;">阪和興業</td><td>20</td><td>12</td></tr>
+                <tr><td class="lbl" style="font-size:15px;">堺鋼板</td><td>52</td><td>30</td></tr>
+                <tr><td class="lbl" style="font-size:15px;">興亜産業他</td><td>32</td><td class="ok">82</td></tr>
+                <tr class="sum"><td class="lbl" style="font-size:15px;">計</td><td>109</td><td class="ok">131</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <div class="slide-foot">
+    <span>三幸商事株式会社 営業2部 部門会議資料</span><span>2026年3月19日</span>
+  </div>
+</div>
+
+<!-- ========================================
+     スライド 7 ： 在庫・新規拡販・トピックス
+======================================== -->
+<div class="slide">
+  <div class="slide-bar"></div>
+  <div class="slide-header">
+    <div>
+      <div class="slide-title">在庫状況　／　新規拡販　／　トピックス</div>
+    </div>
+    <div class="slide-num">7 / 7</div>
+  </div>
+  <div class="slide-body" style="gap:14px;">
+
+    <div class="col2" style="gap:20px; flex:1;">
+
+      <!-- 左：在庫 + トピックス -->
+      <div style="display:flex; flex-direction:column; gap:12px;">
+
+        <div>
+          <div class="sec">在庫状況（2月末実績 → 3月末予想）</div>
+          <table class="big-table">
+            <thead>
+              <tr>
+                <th style="text-align:left;">品目</th>
+                <th colspan="2" style="background:rgba(70,100,160,.5);">2月末 実績</th>
+                <th colspan="2" style="background:rgba(150,50,50,.4);">3月末 予想</th>
+              </tr>
+              <tr>
+                <th></th>
+                <th class="sub" style="background:rgba(60,90,150,.4);">重量(t)</th>
+                <th class="sub" style="background:rgba(60,90,150,.4);">金額(万)</th>
+                <th class="sub" style="background:rgba(130,40,40,.3);">重量(t)</th>
+                <th class="sub" style="background:rgba(130,40,40,.3);">金額(万)</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="lbl">三幸Ｐ関係</td>
+                <td>753</td><td>16,061</td>
+                <td>733</td><td>15,634</td>
+              </tr>
+              <tr>
+                <td class="lbl">薄板</td>
+                <td>1,428</td><td>17,157</td>
+                <td>1,430</td><td>17,181</td>
+              </tr>
+              <tr class="sum">
+                <td class="lbl">合　計</td>
+                <td>2,181</td><td>33,218</td>
+                <td>2,163</td><td>32,815</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="topic-box">
+          <div class="topic-title">📢 マーケットトピックス</div>
+          各メーカーが値上げ発表。実勢価格・市況を注視し動向を確認。<br>
+          仕入コスト上昇を見据えた売価・粗利管理が必要。
+        </div>
+
+      </div>
+
+      <!-- 右：新規拡販 -->
+      <div>
+        <div class="sec">新規拡販状況　― 新規4社獲得</div>
+        <div class="new-cards" style="grid-template-columns:1fr 1fr; gap:10px; margin-top:8px;">
+          <div class="new-card">
+            <div class="company">㈱さいち</div>
+            <div class="person">担当：新木</div>
+            <div class="detail">3月より新規販売開始<br>シャーリング向け 9t</div>
+          </div>
+          <div class="new-card">
+            <div class="company">カネマス鋼材</div>
+            <div class="person">担当：新木</div>
+            <div class="detail">新規取引開始<br>7t 販売</div>
+          </div>
+          <div class="new-card">
+            <div class="company">グラビティ</div>
+            <div class="person">担当：船吉</div>
+            <div class="detail">缶バッジ電動手動機<br>1台 納入<br>売上60万・粗利20万</div>
+          </div>
+          <div class="new-card">
+            <div class="company">セイデンテクノ</div>
+            <div class="person">担当：畠中</div>
+            <div class="detail">缶バッジ手動機<br>1台 納入</div>
+          </div>
+        </div>
+
+        <div style="margin-top:10px; background:rgba(255,255,255,.04); border-radius:10px; padding:14px 18px;">
+          <div style="font-size:17px; color:#a0c8ff; font-weight:bold; margin-bottom:8px;">今後の取組み・次月方針</div>
+          <div style="font-size:17px; color:#c0d0e0; line-height:1.8;">
+            ・4/1〜 ECサイトにて電動手動機・半自動機リリース<br>
+            ・4/1〜5/31 TDB / HELFECCLOUD を活用し、薄板・非缶材ともターゲットリストを作成 ⇒ 新規拡販へ展開<br>
+            ・グリッター缶バッジパーツ、サンワへ3,000個納入済み、評価待ち<br>
+            ・ほぼゼロぶりき 3月契約各10t ずつ、5月にHOTコイルUP・7月積み予定
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+  <div class="slide-foot">
+    <span>三幸商事株式会社 営業2部 部門会議資料</span><span>2026年3月19日</span>
+  </div>
+</div>
+
+</body>
+</html>

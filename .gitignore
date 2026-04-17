@@ -18,3 +18,13 @@ desktop.ini
 __pycache__/
 *.pyc
 *.pyo
+
+# 機密情報
+.env
+*.env
+edoc_config.json
+credentials.json
+token.pickle
+*.pickle
+client_secret_*.json
+.plaud_asana_state.json
