@@ -21,6 +21,8 @@
       "Bash(dir \"C:\\\\Program Files \\(x86\\)\\\\LibreOffice\")",
       "Bash(ls \"C:\\\\Users\\\\FONE\\\\.claude\\\\projects\\\\--192-168-1-126---------2-------------------------\\\\tool-results\"\" 2>/dev/null || echo \"not found \")",
       "WebSearch",
+      "WebFetch(domain:app.asana.com)",
+      "Bash(curl*app.asana.com*)",
       "Bash(mkdir -p \"//192.168.1.126/本社/営業/営業2部/個人フォルダ/竹村/カーソル/三幸商事株式会社/財務・経理部/財務諸表/三幸プロダクツ\")",
       "Bash(cp \"C:/Users/FONE/Downloads/2026年2月月次（税込）.xlsx\" \"//192.168.1.126/本社/営業/営業2部/個人フォルダ/竹村/カーソル/三幸商事株式会社/財務・経理部/財務諸表/三幸プロダクツ/2026年2月月次（税込）.xlsx\")",
       "Bash($skillDir = \"C:\\\\Users\\\\FONE\\\\AppData\\\\Roaming\\\\Claude\\\\local-agent-mode-sessions\\\\skills-plugin\\\\1d2b2d56-290e-44ab-bd1b-1b7164fa0ee6\\\\7be544ad-79f9-4cff-b512-c44e12ce84a4\\\\skills\\\\xlsx\")",
