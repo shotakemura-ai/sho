@@ -77,7 +77,8 @@
       "Bash(git -C \"//192.168.1.126/本社/営業/営業2部/個人フォルダ/竹村/カーソル/三幸商事株式会社\" remote add origin https://github.com/shotakemura-ai/sho.git)",
       "Bash(git -C \"//192.168.1.126/本社/営業/営業2部/個人フォルダ/竹村/カーソル/三幸商事株式会社\" push origin master)",
       "Bash(git -C \"//192.168.1.126/本社/営業/営業2部/個人フォルダ/竹村/カーソル/三幸商事株式会社\" push origin master --verbose)",
-      "Bash(echo \"EXIT: $?\")"
+      "Bash(echo \"EXIT: $?\")",
+      "Bash(powershell -Command \"Remove-Item '\\\\\\\\\\\\\\\\192.168.1.126\\\\\\\\本社\\\\\\\\営業\\\\\\\\営業2部\\\\\\\\個人フォルダ\\\\\\\\竹村\\\\\\\\カーソル\\\\\\\\三幸商事株式会社\\\\\\\\.git\\\\\\\\index.lock' -Force\")"
     ],
     "defaultMode": "bypassPermissions",
     "additionalDirectories": [
