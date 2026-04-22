@@ -29,4 +29,5 @@ token.pickle
 client_secret_*.json
 .plaud_asana_state.json
 .mcp.json
+.claude/settings.local.json
 gcp-oauth.keys.json
