@@ -157,6 +157,17 @@ Claude Code は MCP サーバー経由で外部ツールに接続できる。
 - 仕入価格など `me.md` の NG 事項に該当する情報は、ツール経由で取得しても出力しない
 - 新しいツールを接続したらこの表に追記する
 
+## セッション初回セットアップ（デバイス別）
+
+### Windows PC（仕事PM）
+初回起動時に以下を実行すること：
+1. PowerShell（管理者）で `.\scripts\setup_auto_sync.ps1` を実行 → Git自動同期（5分おき）を登録
+2. PowerShell（管理者）で `.\scripts\setup_asana_scheduler.ps1` を実行 → Asana定期同期を登録
+3. `scripts\auto_sync.bat` をダブルクリックして動作確認
+
+### iPhone / Mac（統括マネージャー / プライベートPM）
+特別なセットアップ不要。このリポジトリを読めば即稼働。
+
 ## 更新のしかた
 
 - 顧客と話した直後：`context/clients/<name>.md` の末尾に日付付きで追記
