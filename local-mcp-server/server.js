@@ -25,6 +25,19 @@ function getAsanaToken() {
   }
 }
 
+
+function formatIcsDate(date) {
+  return date.toISOString().replace(/[-:]/g, '').replace(/\.\d{3}Z$/, 'Z');
+}
+
+function escapeIcsText(text) {
+  return text
+    .replace(/\\/g, '\\\\')
+    .replace(/\r?\n/g, '\\n')
+    .replace(/,/g, '\\,')
+    .replace(/;/g, '\\;');
+}
+
 function createMcpServer() {
   const server = new McpServer({ name: 'sanko-local-mcp', version: '1.0.0' });
 
@@ -100,6 +113,62 @@ function createMcpServer() {
       });
       const data = await res.json();
       return { content: [{ type: 'text', text: JSON.stringify(data, null, 2) }] };
+    } catch (e) {
+      return { content: [{ type: 'text', text: `Error: ${e.message}` }], isError: true };
+    }
+  });
+
+
+  server.tool('create_calendar_event_ics', 'カレンダー登録用のICSファイルを作成する', {
+    title: z.string().describe('予定タイトル'),
+    start: z.string().describe('開始日時（ISO形式。例: 2026-05-03T01:00:00Z）'),
+    end: z.string().describe('終了日時（ISO形式。例: 2026-05-03T02:00:00Z）'),
+    description: z.string().optional().describe('詳細メモ'),
+    location: z.string().optional().describe('場所'),
+    outputPath: z.string().optional().describe('出力先パス（省略時はtmp）'),
+  }, async ({ title, start, end, description, location, outputPath }) => {
+    try {
+      const startDate = new Date(start);
+      const endDate = new Date(end);
+      if (Number.isNaN(startDate.getTime()) || Number.isNaN(endDate.getTime())) {
+        throw new Error('start/end は ISO 8601 形式で指定してください');
+      }
+      if (endDate <= startDate) {
+        throw new Error('end は start より後にしてください');
+      }
+
+      const uid = `${Date.now()}-${Math.random().toString(36).slice(2)}@sanko-local-mcp`;
+      const dtStamp = formatIcsDate(new Date());
+      const dtStart = formatIcsDate(startDate);
+      const dtEnd = formatIcsDate(endDate);
+      const lines = [
+        'BEGIN:VCALENDAR',
+        'VERSION:2.0',
+        'PRODID:-//Sanko Shoji//Local MCP//JA',
+        'CALSCALE:GREGORIAN',
+        'METHOD:PUBLISH',
+        'BEGIN:VEVENT',
+        `UID:${uid}`,
+        `DTSTAMP:${dtStamp}`,
+        `DTSTART:${dtStart}`,
+        `DTEND:${dtEnd}`,
+        `SUMMARY:${escapeIcsText(title)}`,
+      ];
+      if (description) lines.push(`DESCRIPTION:${escapeIcsText(description)}`);
+      if (location) lines.push(`LOCATION:${escapeIcsText(location)}`);
+      lines.push('END:VEVENT', 'END:VCALENDAR');
+      const content = `${lines.join('\r\n')}\r\n`;
+
+      const filePath = outputPath || path.join(os.tmpdir(), `calendar-event-${Date.now()}.ics`);
+      fs.mkdirSync(path.dirname(filePath), { recursive: true });
+      fs.writeFileSync(filePath, content, 'utf8');
+
+      return {
+        content: [{
+          type: 'text',
+          text: `ICSファイルを作成しました: ${filePath}\nGoogleカレンダーで「インポート」から登録してください。`,
+        }],
+      };
     } catch (e) {
       return { content: [{ type: 'text', text: `Error: ${e.message}` }], isError: true };
     }
