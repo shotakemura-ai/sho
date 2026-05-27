@@ -49,6 +49,7 @@ FAX (06)6541-3588
 - `context/google_calendar.md` — Google カレンダー連携（iCal URL・スケジュール取得）
 - `context/gmail.md` — Gmail 連携（IMAP・メール受信・サイボウズ転送メール）
 - `context/task_templates.md` — 並列実行用タスクテンプレ集（寝る前に複数セッションを起動するときの定型）
+- `context/learnings.md` — AI 活用の学習ログ（やってみて分かったことを蓄積する場所）
 
 ## ディレクトリ構成
 
