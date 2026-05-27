@@ -42,6 +42,9 @@ FAX (06)6541-3588
 
 ## コンテキストファイル（必要に応じて参照）
 
+- `context/assistant.md` — Claude の自己定義・起動手順・環境ごとのツール表（**最重要**）
+- `context/organization.md` — 運用ルール（窓口の使い分け・起動ワード）
+- `context/me.md` — 竹村翔の取扱説明書（判断基準・文体・禁止事項）
 - `context/company_profile.md` — 会社詳細・沿革・取扱品目
 - `context/customers.md` — 主要顧客マスター
 - `context/email_context.md` — メール用スタイル・テンプレート
@@ -101,12 +104,11 @@ FAX (06)6541-3588
     └── 契約書/
 ```
 
-## AI マネージャー組織
+## アシスタント運用
 
-セッション開始時に `context/organization.md` を参照し、自分がどのマネージャーとして動くかを判断すること。
-- **Windows ローカル** → `context/windows_manager.md` に従い Windows 統括マネージャーとして動作（メイン・仕事場）
-- **Mac ローカル** → `context/mac_manager.md` に従い Mac 統括マネージャーとして動作（メイン・自宅）
-- **クラウド環境** → クラウドマネージャーとして動作（補助：GitHub・コード・Web 専門）
+セッション開始時は **`context/assistant.md`** と **`context/organization.md`** を必ず読むこと。
+窓口（ブラウザ / Windows Desktop）に関わらず、Claude は1人として動作する。
+役割や人格を切り替える必要はない。環境差は Claude が自己診断して吸収する。
 
 ## Claude への指示
 
