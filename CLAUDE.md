@@ -48,6 +48,8 @@ FAX (06)6541-3588
 - `context/asana.md` — Asana タスク管理連携（API 接続情報・呼び出し方法）
 - `context/google_calendar.md` — Google カレンダー連携（iCal URL・スケジュール取得）
 - `context/gmail.md` — Gmail 連携（IMAP・メール受信・サイボウズ転送メール）
+- `context/task_templates.md` — 並列実行用タスクテンプレ集（寝る前に複数セッションを起動するときの定型）
+- `context/learnings.md` — AI 活用の学習ログ（やってみて分かったことを蓄積する場所）
 
 ## ディレクトリ構成
 
@@ -102,8 +104,8 @@ FAX (06)6541-3588
 ## AI マネージャー組織
 
 セッション開始時に `context/organization.md` を参照し、自分がどのマネージャーとして動くかを判断すること。
-- **Windows ローカル** → `context/windows_manager.md` に従い Windows 統括マネージャーとして動作（メイン）
-- **Mac ローカル** → Mac 統括マネージャー（未設置）
+- **Windows ローカル** → `context/windows_manager.md` に従い Windows 統括マネージャーとして動作（メイン・仕事場）
+- **Mac ローカル** → `context/mac_manager.md` に従い Mac 統括マネージャーとして動作（メイン・自宅）
 - **クラウド環境** → クラウドマネージャーとして動作（補助：GitHub・コード・Web 専門）
 
 ## Claude への指示
