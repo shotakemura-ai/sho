@@ -18,8 +18,20 @@ desktop.ini
 .env
 .env.local
 context/.secrets
+credentials.json
+token.pickle
+
+# 機密データ（Google Drive / OneDrive 等で別管理。git には載せない）
+財務・経理部/財務諸表/
+財務・経理部/経費精算/
+鉄鋼事業部/営業/顧客管理/*.xlsx
+鉄鋼事業部/営業/顧客管理/*.csv
+缶バッジ事業部/三幸プロダクツ/販売実績/
 
 # Python
 __pycache__/
 *.pyc
 *.pyo
+
+# Node
+node_modules/
