@@ -42,7 +42,8 @@
       "Bash(rm .git/index.lock)",
       "Bash(ls .git/index*)",
       "Bash(git commit:*)",
-      "Bash(gh auth:*)"
+      "Bash(gh auth:*)",
+      "Bash(mkdir -p .claude/hooks)"
     ]
   }
 }
