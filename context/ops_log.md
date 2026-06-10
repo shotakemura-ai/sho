@@ -28,3 +28,4 @@
 | 2026-06-09 13:00 | その他 | ops_log 自体の運用開始（測定インフラ整備） | 1 | カウンタ自動化の起点。次回セッションから Claude がここを読む |
 | 2026-06-10 | 副業AIxBGM | Mac 側で副業作業 → repo へ push 依頼中 | 2 | Mac（副業）+ クラウド（本セッション）の2並列 |
 | 2026-06-10 | その他 | 24h AI 運用 v2 再設計（3層化・バンドル発注・GitHub Actions 自動化） | 2 | L3 完全自動レイヤー新設。要 ANTHROPIC_API_KEY 登録 |
+| 2026-06-10 | その他 | L3 を Routines に差し替え（サブスク内で動くので API 課金不要） | 2 | Routines テンプレ context/routines/ に保存。次は claude.ai/code/routines で登録 |
