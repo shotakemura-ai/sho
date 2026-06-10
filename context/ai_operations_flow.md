@@ -67,8 +67,14 @@ claude.ai/code/routines で定義する「**Routines**」を使う。**Claude Pr
 
 | Routine | スケジュール | やること |
 |---------|--------------|----------|
-| **R-morning-brief** | 毎日 05:30 JST | Web 調査 → `鉄鋼事業部/マーケティング/morning_brief_YYYYMMDD.md` を生成 → `claude/auto-morning-brief-*` ブランチに push |
-| **R-weekly-review** | 日曜 21:00 JST | ops_log と今週のコミットを集計 → `context/learnings.md` に週次振り返りを追記 → `claude/auto-weekly-review-*` ブランチに push |
+| **R-morning-brief** | 毎日 05:30 JST | Web 調査 → `鉄鋼事業部/マーケティング/morning_brief_YYYYMMDD.md` を生成して push |
+| **R-inbox-triage** | 平日 07:00 JST | Gmail 未返信整理 + 定型返信を Gmail 下書きに + Asana TOP5 + 今日の予定 → `daily/triage_YYYYMMDD.md` |
+| **R-evening-prep** | 平日 18:00 JST | カレンダーから明日の社外予定を読み、訪問先ごとの調査・想定問答 → `鉄鋼事業部/営業/訪問準備/prep_YYYYMMDD.md` |
+| **R-minutes** | 平日 18:30 JST | 当日の Zoom 録音を議事録化 → `総務・人事部/議事録/YYYYMMDD_会議名.md`（録音ゼロなら何もしない） |
+| **R-weekly-review** | 日曜 21:00 JST | ops_log と今週のコミットを集計 → `context/learnings.md` に週次振り返りを追記 |
+
+**コネクタ付き Routine の鉄則**：Routine は**翔さん本人として** Gmail / Asana / カレンダーに触る。
+だから全テンプレに「**読み取り + 下書きまで。送信・更新・削除は禁止**」を明記してある。送信は必ず人間。
 
 - **初回セットアップ**：claude.ai/code/routines で **New routine** → repo `shotakemura-ai/sho` を指定 → プロンプト貼り付け → スケジュール設定 → Create
 - **手動実行**：Routine 詳細ページで **Run now**
@@ -81,8 +87,11 @@ claude.ai/code/routines で定義する「**Routines**」を使う。**Claude Pr
 ### 各 Routine のプロンプト
 
 定義は `context/routines/` 配下に保存（手動コピペ用テンプレート）：
-- `routines/morning-brief.md`
-- `routines/weekly-review.md`
+- `routines/morning-brief.md` — 朝のブリーフィング
+- `routines/inbox-triage.md` — 朝の受信箱整理（Gmail 下書き作成含む）
+- `routines/evening-prep.md` — 明日の訪問準備
+- `routines/minutes-format.md` — 当日会議の議事録化
+- `routines/weekly-review.md` — 週次振り返り
 
 ---
 
