@@ -72,6 +72,7 @@ claude.ai/code/routines で定義する「**Routines**」を使う。**Claude Pr
 | **R-evening-prep** | 平日 18:00 JST | カレンダーから明日の社外予定を読み、訪問先ごとの調査・想定問答 → `鉄鋼事業部/営業/訪問準備/prep_YYYYMMDD.md` |
 | **R-minutes** | 平日 18:30 JST | 当日の Zoom 録音を議事録化 → `総務・人事部/議事録/YYYYMMDD_会議名.md`（録音ゼロなら何もしない） |
 | **R-weekly-review** | 日曜 21:00 JST | ops_log と今週のコミットを集計 → `context/learnings.md` に週次振り返りを追記 |
+| **R-ryo-gakucho-watch** | 毎月 1 日 06:00 JST | 両学長の最新発信 + 制度変更ニュースを月次吸収 → `context/playbooks/updates/ryo_gakucho_YYYYMM.md` |
 
 **コネクタ付き Routine の鉄則**：Routine は**翔さん本人として** Gmail / Asana / カレンダーに触る。
 だから全テンプレに「**読み取り + 下書きまで。送信・更新・削除は禁止**」を明記してある。送信は必ず人間。
@@ -92,6 +93,7 @@ claude.ai/code/routines で定義する「**Routines**」を使う。**Claude Pr
 - `routines/evening-prep.md` — 明日の訪問準備
 - `routines/minutes-format.md` — 当日会議の議事録化
 - `routines/weekly-review.md` — 週次振り返り
+- `routines/ryo-gakucho-watch.md` — 月次の両学長知見アップデート
 
 ---
 
