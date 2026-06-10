@@ -1,0 +1,45 @@
+name: Morning Brief (auto)
+
+# 毎朝 05:30 JST に morning brief を自動生成して main に commit する。
+# 初回のみ: repo Settings → Secrets and variables → Actions → ANTHROPIC_API_KEY を登録すること。
+# 手動実行: Actions タブ → Morning Brief (auto) → Run workflow
+
+on:
+  schedule:
+    - cron: "30 20 * * *" # 20:30 UTC = 05:30 JST
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  morning-brief:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            あなたは三幸商事株式会社（大阪の鉄鋼商社）の AI アシスタントです。
+            CLAUDE.md と context/me.md を読んでから、今日（JST）の朝のブリーフィングを作成してください。
+
+            ## 調査内容（WebSearch を使う）
+            1. 直近24時間の国内鋼材市況・鉄鋼業界ニュース（H形鋼・鋼板・ブリキ薄板を優先）
+            2. 原料動向（鉄鉱石・原料炭・スクラップ）と為替（USD/JPY）
+            3. 大阪経済・中小企業政策のトピック
+            4. AI 業界の重要ニュース（経営者目線で1〜2件）
+
+            ## 出力
+            - `鉄鋼事業部/マーケティング/morning_brief_YYYYMMDD.md` に保存（YYYYMMDD は今日の JST 日付）
+            - 既存の morning_brief_*.md の形式を踏襲。A4 1枚相当、各トピック1〜3行で簡潔に
+            - 文体: 本質を突いた簡潔さ。回りくどい表現禁止
+            - 冒頭に「自動生成（GitHub Actions）」と明記
+
+            ## 仕上げ
+            git add → commit（メッセージ: "Add morning brief for YYYY/MM/DD (auto)"）→ main に push
+          claude_args: '--allowedTools "Bash(git:*),Read,Write,Glob,Grep,WebSearch,WebFetch"'
