@@ -1,0 +1,47 @@
+name: Weekly Review (auto)
+
+# 毎週日曜 21:00 JST に1週間の AI 運用を振り返り、learnings.md に追記して commit する。
+# B-901（週次振り返りパック）の完全自動版。
+# 初回のみ: repo Settings → Secrets and variables → Actions → ANTHROPIC_API_KEY を登録すること。
+
+on:
+  schedule:
+    - cron: "0 12 * * 0" # 12:00 UTC 日曜 = 21:00 JST 日曜
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  weekly-review:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 0
+
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          prompt: |
+            あなたは三幸商事の AI アシスタント。竹村翔の「24時間 AI 運用マスタリー」のコーチ役です。
+            CLAUDE.md と context/me.md、context/ai_operations_flow.md を読んでから、今週の振り返りを作成してください。
+
+            ## 集計（実データに基づくこと。推測で数字を作らない）
+            1. `context/ops_log.md` を読み、直近7日間の発注件数・領域別内訳・最大並列数を集計
+            2. `git log --since="7 days ago" --oneline` で今週の活動を確認
+            3. ops_log への記録が少ない／空白期間が長い場合は、その事実を率直に指摘
+
+            ## 出力
+            `context/learnings.md` の末尾に以下の形式で追記:
+            - 見出し: 「## 週次振り返り YYYY/MM/DD（自動生成）」
+            - 今週の数字（発注件数・最大並列数・活動日数）
+            - うまくいったこと / 詰まっていること（各1〜3行）
+            - 来週の改善提案を1つだけ（最重要のものに絞る）
+            - 文体: 簡潔・率直。コーチとして甘やかさない
+
+            ## 仕上げ
+            git add → commit（メッセージ: "Add weekly review for week of YYYY/MM/DD (auto)"）→ main に push
+          claude_args: '--allowedTools "Bash(git:*),Read,Write,Glob,Grep"'
