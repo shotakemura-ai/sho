@@ -61,18 +61,28 @@ B-002。出力はいつもの場所。終わったら ops_log に記録して。
 
 ---
 
-## 🤖 L3：完全自動レイヤー（GitHub Actions）
+## 🤖 L3：完全自動レイヤー（Claude Code Routines）
 
-`.github/workflows/` に定義済み。**発注不要、勝手に動く**。
+claude.ai/code/routines で定義する「**Routines**」を使う。**Claude Pro サブスクで動く**（API 課金なし）。
 
-| ワークフロー | スケジュール | やること |
-|--------------|--------------|----------|
-| `morning-brief.yml` | 毎朝 05:30 JST | Web 調査 → `鉄鋼事業部/マーケティング/morning_brief_YYYYMMDD.md` を生成して main に commit |
-| `weekly-review.yml` | 日曜 21:00 JST | ops_log と今週のコミットを集計 → learnings.md に週次振り返りを追記して commit |
+| Routine | スケジュール | やること |
+|---------|--------------|----------|
+| **R-morning-brief** | 毎日 05:30 JST | Web 調査 → `鉄鋼事業部/マーケティング/morning_brief_YYYYMMDD.md` を生成 → `claude/auto-morning-brief-*` ブランチに push |
+| **R-weekly-review** | 日曜 21:00 JST | ops_log と今週のコミットを集計 → `context/learnings.md` に週次振り返りを追記 → `claude/auto-weekly-review-*` ブランチに push |
 
-- **初回セットアップ（1回だけ・5分）**：GitHub の repo Settings → Secrets and variables → Actions → `ANTHROPIC_API_KEY` を登録
-- 手動で今すぐ動かす：GitHub の Actions タブ → ワークフロー選択 → 「Run workflow」
-- 制約：Actions 内は Web 調査 + repo 操作のみ（Gmail / Asana 等の MCP は使えない。それは L1/L2 の仕事）
+- **初回セットアップ**：claude.ai/code/routines で **New routine** → repo `shotakemura-ai/sho` を指定 → プロンプト貼り付け → スケジュール設定 → Create
+- **手動実行**：Routine 詳細ページで **Run now**
+- **使用量上限**：1日あたりの起動上限あり（残量は claude.ai/settings/usage で確認）
+- **モデル**：Routine ごとにモデル選択可。標準は claude-fable-5 を推奨
+- **MCP コネクタ**：Asana / Gmail / カレンダー / Slack / Drive が Routine から使える
+- **ブランチ**：デフォルトで `claude/` プレフィックスのブランチに push。main 直 push したい時だけ Permissions の「Allow unrestricted branch pushes」を有効化
+- **検収**：生成された PR or ブランチを翔さんが確認 → main にマージ
+
+### 各 Routine のプロンプト
+
+定義は `context/routines/` 配下に保存（手動コピペ用テンプレート）：
+- `routines/morning-brief.md`
+- `routines/weekly-review.md`
 
 ---
 
