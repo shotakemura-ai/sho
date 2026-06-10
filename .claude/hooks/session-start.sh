@@ -5,9 +5,9 @@ set -euo pipefail
 # 「いつものお願い」を自動実行するための指示注入
 # 詳細: context/assistant.md、context/ai_operations_flow.md 参照
 
-# 1. リモートを取り込み（最新化）。失敗しても止めない
+# 1. リモートの最新を取得（fetch のみ。作業ブランチへの自動マージはしない）
 cd "${CLAUDE_PROJECT_DIR:-.}" 2>/dev/null || true
-git pull origin main 2>&1 | tail -2 || true
+git fetch origin main 2>&1 | tail -1 || true
 
 # 2. Claude に起動ルーティンを指示
 cat <<'INSTRUCTIONS'
