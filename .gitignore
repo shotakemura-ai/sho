@@ -35,3 +35,13 @@ __pycache__/
 
 # Node
 node_modules/
+
+# 機密情報（追加分）
+*.env
+edoc_config.json
+*.pickle
+client_secret_*.json
+.plaud_asana_state.json
+.mcp.json
+.claude/settings.local.json
+gcp-oauth.keys.json
