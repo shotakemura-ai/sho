@@ -69,6 +69,8 @@ FAX (06)6541-3588
 ### 毎セッション必読（フックが自動指示）
 - `context/me.md` — 竹村翔の取扱説明書（判断基準・応対ルール・禁止事項）
 - `context/ai_operations_flow.md` — **24h AI 運用 v3（運用の本体）**
+- `context/strengths.md` — 資質活用プレイブック（文書・提案・R-daily の下敷き。必読ではないが文書作成時は参照）
+- `context/sbt.md` — SBT 活用プレイブック（プラスの言葉・成功イメージ・逆境の再フレーム。strengths.md とセットで参照）
 
 ### 仕事で参照
 - `context/company_profile.md` — 会社詳細・取扱品目
