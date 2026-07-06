@@ -1,48 +1,32 @@
 # Gmail 連携設定（メール受信）
 
-## 接続情報
+## 現在の接続方法（2026/07/06〜）
+
+**Gmail MCP コネクタを使う**（クラウド・どの端末からでも可）。
+検索・スレッド取得・下書き作成まで対応。**送信・削除は不可**（読み取り + 下書きまでの運用）。
 
 | 項目 | 値 |
 |------|-----|
 | アカウント | takemurasteelsanco@gmail.com |
 | 用途 | 仕事メール受信（サイボウズからの転送含む） |
-| プロトコル | IMAP over SSL |
-| サーバー | imap.gmail.com:993 |
-| アプリパスワード | `~/.claude/settings.json` の `gmail.app_password` を参照 |
-| アクセス | 読み取り専用（送信不可） |
-
-> **注意**: アプリパスワードは機密情報です。第三者に共有しないこと。
-
----
-
-## curl コマンド例
-
-```bash
-# 未読メール件数確認
-curl -s --url "imaps://imap.gmail.com:993/INBOX" \
-  --user "takemurasteelsanco@gmail.com:<APP_PASSWORD>" \
-  --request "SEARCH UNSEEN"
-
-# 最新N件のヘッダー取得（件名・送信者・日時）
-curl -s --url "imaps://imap.gmail.com:993/INBOX" \
-  --user "takemurasteelsanco@gmail.com:<APP_PASSWORD>" \
-  --request "FETCH <UID>:<UID-N> (BODY[HEADER.FIELDS (FROM SUBJECT DATE)])"
-
-# 特定メールの本文取得
-curl -s --url "imaps://imap.gmail.com:993/INBOX" \
-  --user "takemurasteelsanco@gmail.com:<APP_PASSWORD>" \
-  --request "FETCH <UID> (BODY[TEXT])"
-```
-
-> `<APP_PASSWORD>` は `syuixwzfodnvjboh`（スペースなし）
-
----
+| 接続 | Gmail MCP コネクタ（claude.ai のコネクタ設定で接続済み） |
+| できること | 検索・閲覧・ラベル・**下書き作成** |
+| できないこと | 送信・削除（送信は必ず人間が Gmail から） |
 
 ## Claude への指示
 
-- メール確認の依頼があれば IMAP で取得して表示すること
-- 件名・送信者はISO-2022-JPまたはUTF-8エンコードされている場合があるため適切にデコードすること
-- 表示形式：日時・送信者・件名を一覧表示し、本文は要求があれば取得する
-- 「未読メール」「最新メール」「〇〇からのメール」など条件に応じて絞り込む
-- メールの送信・削除・既読化は行わないこと（読み取り専用運用）
-- サイボウズからの転送メールも含まれるため、転送元の内容も考慮して表示すること
+- メール確認は MCP ツール（search_threads / get_thread）で行う
+- 表示形式：日時・送信者・件名を一覧表示し、本文は要求があれば取得
+- 「未読」「最新」「〇〇からのメール」など条件に応じて絞り込む
+- 定型で返せるものは **create_draft で下書きまで**作る。送信はしない
+- サイボウズからの転送メールも含まれるため、転送元の内容も考慮して表示する
+
+---
+
+## 旧方式（IMAP 直接続）— 廃止済み
+
+かつては IMAP + アプリパスワードで直接続していたが、**2026/07/06 に廃止**：
+
+- 当時のアプリパスワードが git 履歴に混入していたことが判明 → **同日、本人が無効化済み**（漏洩リスクは解消）
+- 今後 IMAP 接続が必要になった場合は、新しいアプリパスワードを発行し、
+  **`context/.secrets`（git 管理外）に置く**こと。このファイルや repo 内の md には絶対に書かない
