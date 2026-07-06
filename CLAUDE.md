@@ -63,7 +63,9 @@ FAX (06)6541-3588
 - `context/asana.md` — Asana タスク管理連携（API 接続情報・呼び出し方法）
 - `context/google_calendar.md` — Google カレンダー連携（iCal URL・スケジュール取得）
 - `context/gmail.md` — Gmail 連携（IMAP・メール受信・サイボウズ転送メール）
-- `context/task_templates.md` — 並列実行用タスクテンプレ集（寝る前に複数セッションを起動するときの定型）
+- `context/ai_operations_flow.md` — **24h AI 運用 v3（ゼロ記憶設計・運用の本体）** ※端末一元化の正体もここ
+- `context/task_templates.md` — Claude 用タスク辞書（人間は覚えなくていい。日本語依頼をここにマップ）
+- `context/iphone_setup.md` — iPhone の「発注端末」化ガイド（30分セットアップ・ショートカット・発注動線）
 - `context/learnings.md` — AI 活用の学習ログ（やってみて分かったことを蓄積する場所）
 - `context/dev_rules.md` — **アプリ開発ルール（インフラ構成・セキュリティ禁則）** ※開発タスク時は必読
 
