@@ -43,7 +43,8 @@
       "Bash(ls .git/index*)",
       "Bash(git commit:*)",
       "Bash(gh auth:*)",
-      "Bash(mkdir -p .claude/hooks)"
+      "Bash(mkdir -p .claude/hooks)",
+      "mcp__bf7c680d-5fdc-5ef4-b4a0-abadb619bf0a__create_trigger"
     ]
   }
 }
