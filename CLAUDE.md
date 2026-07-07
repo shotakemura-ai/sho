@@ -88,6 +88,7 @@ FAX (06)6541-3588
 - `context/ops_log.md` — 発注ログ（Claude が書く）
 - `context/learnings.md` — 学習ログ（週次振り返りの蓄積先）
 - `context/iphone_setup.md` — iPhone の発注端末化ガイド
+- `context/desktop_setup.md` — Mac / Windows の Desktop アプリ共通化手順（貼るだけ指示文）
 - `context/dev_rules.md` — **アプリ開発ルール** ※開発タスク時は必読
 
 ---
