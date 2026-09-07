@@ -81,7 +81,7 @@ def main(argv: list[str]) -> int:
     # 補完: 通知トピックから同じ ID のボタンを持つ通知を探し、題名と詳細URLを得る
     meta: dict[str, dict] = {}
     if snoozed and main_topic:
-        for m in fetch(main_topic, "3d"):
+        for m in fetch(main_topic, "13h"):   # ntfy.sh のキャッシュは約12h（"d" 単位は 400 になる）
             for act in m.get("actions") or []:
                 body = str(act.get("body") or "")
                 rid = body.split(":", 1)[0]
