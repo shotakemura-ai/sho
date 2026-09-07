@@ -1,0 +1,27 @@
+{
+  "mcpServers": {
+    "asana": {
+      "command": "npx",
+      "args": ["-y", "@roychri/mcp-server-asana"],
+      "env": {
+        "ASANA_ACCESS_TOKEN": "<ASANA_TOKEN_HERE>"
+      }
+    },
+    "gmail": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-server-gmail",
+        "--creds-file-path", "/home/user/.gmail-mcp/credentials.json",
+        "--token-path", "/home/user/.gmail-mcp/token.json"
+      ]
+    },
+    "google-calendar": {
+      "command": "npx",
+      "args": ["-y", "@cocal/google-calendar-mcp"],
+      "env": {
+        "GOOGLE_OAUTH_CREDENTIALS": "/home/user/.google-calendar-mcp/gcp-oauth.keys.json"
+      }
+    }
+  }
+}
