@@ -1,0 +1,106 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//Sanko Shoji//Claude//JP
+CALSCALE:GREGORIAN
+METHOD:PUBLISH
+X-WR-CALNAME:淡路島旅行
+X-WR-TIMEZONE:Asia/Tokyo
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20260429T073000
+DTEND;TZID=Asia/Tokyo:20260429T083000
+SUMMARY:🚗 出発（淡路島へ）
+DESCRIPTION:朝早めの出発\n高速道路利用で約1時間10分（ホテル→ニジゲンノモリ）\nドラクエは事前チケット購入がスムーズ
+LOCATION:自宅
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20260429T083000
+DTEND;TZID=Asia/Tokyo:20260429T123000
+SUMMARY:🐉 ドラゴンクエストアイランド
+DESCRIPTION:ニジゲンノモリ到着\nドラクエエリアは「F駐車場」側が最寄り\nリアルなRPG体験を家族みんなで！\n大魔王ゾーマとの戦いに挑戦
+LOCATION:ニジゲンノモリ ドラゴンクエストアイランド
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20260429T123000
+DTEND;TZID=Asia/Tokyo:20260429T131500
+SUMMARY:🍽 昼食（園内or周辺）
+DESCRIPTION:オノコガルド城内レストランやキッチンカーを利用\n再入場可なので午後もゆっくり楽しめる
+LOCATION:ニジゲンノモリ
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20260429T131500
+DTEND;TZID=Asia/Tokyo:20260429T140000
+SUMMARY:🛍 ドラクエ続き・お土産タイム
+DESCRIPTION:まだ遊び足りない人は再度クエストに挑戦\nショップでお土産も忘れずに
+LOCATION:ニジゲンノモリ
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20260429T140000
+DTEND;TZID=Asia/Tokyo:20260429T145000
+SUMMARY:🚗 ホテルへ移動（約50分）
+DESCRIPTION:ニジゲンノモリ→グランドメルキュール淡路島リゾート＆スパ
+LOCATION:移動中
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20260429T150000
+DTEND;TZID=Asia/Tokyo:20260429T153000
+SUMMARY:🏨 ホテルチェックイン
+DESCRIPTION:グランドメルキュール淡路島リゾート＆スパ\nチェックイン15:00\nラウンジでウェルカムドリンク
+LOCATION:グランドメルキュール淡路島リゾート＆スパ
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20260429T153000
+DTEND;TZID=Asia/Tokyo:20260429T180000
+SUMMARY:🏊 ホテル満喫タイム
+DESCRIPTION:ラウンジ 15:00-18:00 イブニングソーシャル\n屋内プール 15:30-18:00（雨天OK）\nGWイベント（縁日・段ボール迷路など）4/25-5/6まで
+LOCATION:グランドメルキュール淡路島リゾート＆スパ
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20260429T173000
+DTEND;TZID=Asia/Tokyo:20260429T190000
+SUMMARY:🍽 夕食（ビュッフェ）
+DESCRIPTION:レストランは当日先着順・順番待ちシステム\n早めの時間帯がスムーズ
+LOCATION:グランドメルキュール淡路島リゾート＆スパ
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20260429T193000
+DTEND;TZID=Asia/Tokyo:20260429T210000
+SUMMARY:♨️ 温泉・くつろぎタイム
+DESCRIPTION:温泉大浴場でリラックス（15:00-24:00）\nお子さま用のベビーバスチェア・幼児用イスあり
+LOCATION:グランドメルキュール淡路島リゾート＆スパ
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20260429T210000
+DTEND;TZID=Asia/Tokyo:20260429T230000
+SUMMARY:🍷 ナイトキャップタイム
+DESCRIPTION:ラウンジ（21:00-23:00）で大人はゆったり一杯\nお子さまはお部屋でぐっすり
+LOCATION:グランドメルキュール淡路島リゾート＆スパ
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20260430T073000
+DTEND;TZID=Asia/Tokyo:20260430T090000
+SUMMARY:🍽 朝食（ビュッフェ）
+DESCRIPTION:早めの朝食がおすすめ\n当日先着順・順番待ち
+LOCATION:グランドメルキュール淡路島リゾート＆スパ
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20260430T090000
+DTEND;TZID=Asia/Tokyo:20260430T103000
+SUMMARY:♨️ 温泉・ホテル内でのんびり
+DESCRIPTION:朝風呂でリフレッシュ\nお部屋で荷造りや記念写真も\n翌朝の温泉は5:30-10:00
+LOCATION:グランドメルキュール淡路島リゾート＆スパ
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20260430T093000
+DTEND;TZID=Asia/Tokyo:20260430T110000
+SUMMARY:🎨 瓦五の絵付け体験（ロビー）
+DESCRIPTION:淡路五の鬼瓦に絵付け体験！1個2,000円\n旅の記念にぴったり
+LOCATION:グランドメルキュール淡路島リゾート＆スパ ロビー
+END:VEVENT
+BEGIN:VEVENT
+DTSTART;TZID=Asia/Tokyo:20260430T110000
+DTEND;TZID=Asia/Tokyo:20260430T113000
+SUMMARY:🏨 チェックアウト
+DESCRIPTION:チェックアウト11:00\n荷物をまとめて出発\n\n【雨の状況で選べる2プラン】\nA: うずの丘プラン（11:20-13:00頃）車で約10分\nB: ニジゲンノモリ追加プラン（12:00-14:00頃）車で約50分
+LOCATION:グランドメルキュール淡路島リゾート＆スパ
+END:VEVENT
+END:VCALENDAR
