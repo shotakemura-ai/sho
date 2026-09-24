@@ -8,7 +8,7 @@
 | Routine 名（登録名） | いつ（JST） | 何をする | 正本ファイル |
 |---|---|---|---|
 | R-daily 朝刊 - 三幸商事 | 毎日 06:00 | 朝刊 + 「今日任せられること3つ」→ `daily/YYYYMMDD.md` | `daily-agent.md` |
-| R-weekly 週次振り返り - 24h AI ops | 日曜 21:00 | 週次振り返り + KPI 1問 + 昇格チェック → `context/learnings.md` | `weekly-review.md` |
+| R-weekly 週次振り返り - 24h AI ops | 日曜 21:00 | 週次振り返り + KPI 1問 + 昇格チェック → `context/learnings.md` | `weekly-review.md`（2026-09-25 に Claude が作成。以後 Claude が repo から直接更新できる） |
 | キャラバン徳富 自動転記 | 平日 8〜17時 毎時 | キャラバン徳富氏のメールを Asana「キャラバン受注管理」に全文転記 | （Routine 側のみ。触るときは要注意：顧客名・Asana GID を含む） |
 | 薄板月次A ミル価格・契約 | 毎月 18・21日 09:00 | 東鉄・高炉の薄板価格改定を Web 調査 | （Routine 側のみ） |
 | 薄板月次B 原料・スクラップ・為替 | 毎月 13日 09:00 | 関東鉄源・東鉄スクラップ・鉄鉱石・為替 | （Routine 側のみ） |
@@ -28,6 +28,7 @@ R-daily は前日夕版の🔴🟠を朝刊冒頭に引き継ぐ（二重トリ�
 ## 停止中（Routine 側に無効で残っている）
 
 - (停止 2026-09-04・朝刊に統合) Morning brief — R-daily に統合済み
+- (停止 2026-09-04・ops_log廃止に伴い) Weekly review 旧版（v2） — 上の R-weekly（v3・Claude 作成）に置き換え済み。削除してよい
 - (統合済・無効) キャラバン徳富 自動転記 朝枠 — 毎時版に統合済み
 - (停止 2026-09-04・役割終了) 薄板ウォッチ③ 東京製鐵7月契約 — 役割終了
 
@@ -40,5 +41,7 @@ evening-prep / inbox-triage / minutes-format / morning-brief。
 ## 運用ルール
 
 1. **正本は repo**。プロンプトを直すときは repo のファイルを直してから Routine に貼る。逆はしない
+   - 翔さんが画面から作った Routine（朝刊・キャラバン・薄板系）は Claude から書き換え不可 → 翔さんが貼り直す
+   - Claude が作った Routine（R-weekly）は Claude が repo の正本から直接更新する
 2. **増築禁止**：新しい Routine は、既存が2週間使われ続けた実績が出てから
 3. 秘密値（トピック名・トークン・秘密 URL）は Routine のプロンプトにも repo にも書かない
