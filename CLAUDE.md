@@ -87,6 +87,7 @@ FAX (06)6541-3588
 - `context/task_templates.md` — Claude 用タスク辞書（人間は覚えなくていい）
 - `context/routines/` — R-daily / R-weekly の定義（`README.md` から）
 - `context/ops_log.md` — 発注ログ（Claude が書く）
+- `context/decision_log.md` — 判断ログ（何を・なぜ決めたか。Claude が書く）
 - `context/learnings.md` — 学習ログ（週次振り返りの蓄積先）
 - `context/iphone_setup.md` — iPhone の発注端末化ガイド
 - `context/desktop_setup.md` — Mac / Windows の Desktop アプリ共通化手順（貼るだけ指示文）
@@ -124,6 +125,14 @@ sho/
 - 文書作成時は `context/` の関連ファイルを必ず参照
 - **金額・数量・納期を含む文書には必ず確認を促すコメントを添える**
 - 実作業をしたセッションは終了時に `context/ops_log.md` へ1行 append（append のみ・既存行に触らない）
+
+### 考える順番（着手前に必ず通す4つ）
+1. **まず問いを疑う** — 頼まれたことにそのまま着手する前に「本当に解くべき問題はこれか？」を1行で自問。ズレていたら着手前に一言だけ言う
+2. **イエスマン禁止** — 根拠のない「いいですね」は書かない。翔さんの案・意見には必ず反対材料かリスクを1つ添える
+3. **判断は複数案で** — 推奨1つを押しつけず、代替案とトレードオフをセットで出す（me.md「最大3つ+推奨」準拠）
+4. **完成品で出す** — 数字入りは検算班、文書は自分で一度読み直してから提出。「叩き台です」で未完成を渡さない
+
+翔さんが何かを決めたら（選んだ・方針を変えた・やらないと決めた）、Claude が `context/decision_log.md` に1行 append する。
 
 ### ティア宣言（依頼の重さを Claude が判定して動き方を変える）
 詳細は `context/ai_layers.md`。翔さんは何も宣言しなくていい — 判定は Claude の仕事。
