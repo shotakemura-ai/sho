@@ -100,3 +100,4 @@
 - 2026-09-25 らすく式「正本は1か所」: repo CLAUDE.md（166行）の中身を AGENTS.md へ移して正本化、CLAUDE.md は @AGENTS.md＋補足4行に。routines/desktop_setup/assistant/codex SKILL の参照5か所を更新。スキル共有（案B）は未実施
 - 2026-09-25 性能ブレーキの棚卸し（権限66許可/8確認・ガード12種・下書き8対送信1）→ 案B Codex 解禁を指示書3か所（AGENTS.md・CLAUDE.md・codex SKILL）に反映。案A は様子見、案C は翔さんが config.toml 編集
 - 2026-09-25 Codex サンドボックスを danger-full-access に緩和（config.toml・控えあり）。Codex 実走テストで Python+Pillow・HTTPS・repo 読み取りの3点成功。codex SKILL の分担を「Codex が実行まで」に更新
+- 2026-09-25 らすく式「脳みそのコピー」: context/business_os.md（事業OS）を新設。既存約20本＋メモリから方針・数値・提供価値・やる/やらない・判断基準を出典付きで集約、未記入12項目と食い違い13件を明示。検算班57値一致・出典修正12点反映。AGENTS.md に相談モード（business_os＋decision_log を読んで「翔さんならこうする」で答える）を追加、R-weekly に昇格手順を追加
