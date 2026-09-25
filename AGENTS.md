@@ -10,10 +10,10 @@
 
 ## Codex で作業するときの追加ルール
 
-- **役割**：主に「画像生成」と「Claude の利用上限に当たったときの代打」。判断・設計・検証は Claude（Fable）側の仕事。代打で動いた内容は、次に Claude が開いたときに検品できるよう `context/ops_log.md` に1行残す
+- **役割**：主に「画像生成」と「Claude の利用上限に当たったときの代打」。判断・設計・検証は Claude（Fable）側の仕事。代打で動いた内容は、次に Claude が開いたときに検品できるよう `context/handoff.md`（3行）と `context/ops_log.md`（1行）に残す
 - **顧客情報・価格・仕入・社内メールの本文は、Codex のプロンプトに貼らない**（外部サービスへ送られるため）。画像の指示文・一般的な文章・公開情報だけを扱う
 - 送信（メール・SNS 投稿）・Asana の更新・カレンダー変更はしない。下書きまで
 - 金額・数量・納期を含む文書は必ず「⚠人間確認必須」を付ける
 - 日付は `TZ=Asia/Tokyo date '+%Y-%m-%d (%a)'` で確認する
 - 生成した画像は `缶バッジ事業部/SNS/画像/`（缶バッジ）または依頼元の部門フォルダに、`YYYYMMDD_<用途>_<連番>.png` で保存する
-- 作業後は `git add` → commit → push（force push・reset --hard は禁止）
+- **作業後は `context/handoff.md` に3行（やったこと／成果物／未完・要確認）を追記し、`context/ops_log.md` に1行 append**してから `git add` → commit → push（force push・reset --hard は禁止）。これが Claude への共有手段。push できない環境なら翔さんに「push してください」と1行
