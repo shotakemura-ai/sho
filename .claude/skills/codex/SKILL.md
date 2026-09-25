@@ -1,6 +1,6 @@
 ---
 name: codex
-description: 画像生成やまとまった実行作業を、Claude の内側から Codex（OpenAI）に委託して、結果を Claude が検品するスキル。翔さんが「画像つくって」「バナー」「SNS 用の絵」「図解にして」「Codex に投げて」「Codex でやって」と言ったとき、または /codex で起動する。Codex の MCP ツール（codex）がこのセッションに無いときは、その旨を1行で伝えて Claude 単体でできる範囲をやる。顧客情報・価格は Codex に渡さない。
+description: 画像生成やまとまった実行作業を、Claude の内側から Codex（OpenAI）に委託して、結果を Claude が検品するスキル。翔さんが「画像つくって」「バナー」「SNS 用の絵」「図解にして」「Codex に投げて」「Codex でやって」と言ったとき、または /codex で起動する。Codex の MCP ツール（codex）がこのセッションに無いときは、Claude で作らずに止まり、接続チェック3つを案内する（翔さんが「Claude でいい」と言った時だけ Claude が作る）。画像・バナー・図解の依頼は必ずこのスキルを通す。顧客情報・価格は Codex に渡さない。
 argument-hint: [Codex に任せたいこと（画像の用途・サイズ・文言など）]
 ---
 
@@ -12,7 +12,14 @@ Claude（Fable）が図面を引く → Codex（職人）が作る → Claude �
 ## 0. 使える状態かを確認する（毎回・黙って）
 - このセッションに `mcp__codex__*`（`codex` / `codex-reply`）ツールがあるか確認
   - **ある**（Mac／会社 PC の Desktop アプリ）→ 続行
-  - **ない**（クラウド／Routine／未接続の PC）→ 翔さんに1行：「この端末は Codex 未接続です。Claude だけで進めます（画像は仕様書まで）」。設計・文言・仕様書は作り、画像生成だけ PC でやれる形（下の「仕様書」）を残して止まる
+  - **ない** → **Claude で画像を作らない。** 次の3行だけ返して止まる（翔さんの意図は「Claude の消費を減らす」なので、代替生成は意図に反する）：
+    ```
+    この端末は Codex 未接続です。画像は作っていません。チェック3つ：
+    ① ターミナルで `codex --version` が出るか（出なければ npm install -g @openai/codex → codex login）
+    ② sho フォルダで `git pull` 済みか（.mcp.json が手元に無いと繋がらない）
+    ③ Claude Code で `/mcp` を打って codex が connected か（初回は「プロジェクトの MCP サーバーを許可しますか」→ 許可）
+    ```
+    翔さんが「Claude でいい」「今回は Claude で」と明示した時だけ、Claude が作る（その場合も仕様書は残す）
 - 初回接続は翔さんが PC で `npm install -g @openai/codex` → `codex login`（ChatGPT Business）。設定は repo の `.mcp.json` が持っているので、それ以上の手順はない
 
 ## 1. 何を Codex に任せるか（任せないか）
