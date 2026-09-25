@@ -21,6 +21,7 @@ Claude（Fable）が図面を引く → Codex（職人）が作る → Claude �
     ```
     翔さんが「Claude でいい」「今回は Claude で」と明示した時だけ、Claude が作る（その場合も仕様書は残す）
 - 初回接続は翔さんが PC で `npm install -g @openai/codex` → `codex login`（ChatGPT Business）。設定は repo の `.mcp.json` が持っているので、それ以上の手順はない
+- **版の固定（2026-09-25）**: Codex CLI 0.154.0 で `codex mcp-server` が削除された（0.149.1 で非推奨化）。`.mcp.json` は `npx -y @openai/codex@0.153.4 mcp-server` で最終対応版に固定してある。グローバルの codex が最新でも影響しない（ログイン情報は `~/.codex` を共有）。初回起動は npx のダウンロードで 30 秒前後かかる。恒久対応は公式の Claude Code 用 Codex プラグイン（openai/codex-plugin-cc）への乗り換え
 
 ## 1. 何を Codex に任せるか（任せないか）
 | 任せる | 任せない（Claude がやる） |

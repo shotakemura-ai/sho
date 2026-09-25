@@ -1,8 +1,9 @@
 {
   "mcpServers": {
     "codex": {
-      "command": "codex",
-      "args": ["mcp-server"]
+      "command": "npx",
+      "args": ["-y", "@openai/codex@0.153.4", "mcp-server"],
+      "_note": "0.154.0 で `codex mcp-server` が削除されたため 0.153.4 に固定（2026-09-25）。公式の後継は Claude Code 用 Codex プラグイン（openai/codex-plugin-cc）。ログインは ~/.codex を共有するので `codex login` 済みならそのまま使える"
     }
   }
 }
