@@ -99,6 +99,7 @@ FAX (06)6541-3588
 - `context/ops_log.md` — 発注ログ（AI が書く）
 - `context/decision_log.md` — 判断ログ（何を・なぜ決めたか。AI が書く）
 - `context/handoff.md` — Codex・別端末からの引き継ぎメモ（やった側が3行書く。Claude が検品）
+- `context/ai_backlog.md` — AI の宿題（会話で生まれた AI 側のタスク。期限つき。翔さんの実行タスクは Asana）
 - `context/learnings.md` — 学習ログ（週次振り返りの蓄積先）
 - `context/iphone_setup.md` — iPhone の発注端末化ガイド
 - `context/desktop_setup.md` — Mac / Windows の Desktop アプリ共通化手順（貼るだけ指示文）
@@ -146,6 +147,14 @@ sho/
 4. **完成品で出す** — 数字入りは検算班（Claude Code）または自分で根拠を1つずつ読み直し（Codex）、文書は一度通読してから提出。「叩き台です」で未完成を渡さない
 
 翔さんが何かを決めたら（選んだ・方針を変えた・やらないと決めた）、AI が `context/decision_log.md` に1行 append する。
+
+### 宿題と記憶（記録は AI の仕事。翔さんは覚えない・メモしない）
+会話の中で宿題が生まれた**瞬間に**、聞かずに登録し、「宿題に入れた：〇〇（期限 X）」と1行だけ告げる。翔さんが「後でやる」「いつか」「保留」と言ったものも登録する（仮期限＋※仮）。「捨て」は登録せず decision_log へ。
+- **翔さんが手を動かす宿題** → Asana マイタスク（「Asana マイタスクの掟」どおり：期限必須・次の1手だけ・待ちは【待ち：相手】）。AI の存在が見える書き方はしない
+- **AI がやる宿題**（叩き台・調査・仕組み化・確認） → `context/ai_backlog.md` に1行（Asana には置かない＝AI 秘匿）
+- **「残ってるタスクは？」「今の最優先は？」「今日何やる？」** → Asana マイタスク（`search_tasks_preview` assignee=me・未完了）と `ai_backlog.md` を読み、期限順に並べて**最優先を1つ断言**する。翔さんに「何があったっけ」と思い出させない
+- **翔さんの指摘・好み・NG**（「その言い回し嫌い」「文字大きく」「次から〜して」） → その場で `context/preferences.md` に1行（`/oboete`）。同じ指摘を二度させない
+- **決めたこと** → `context/decision_log.md`。**やったこと** → `context/ops_log.md`。**方針** → `context/business_os.md`。どれも AI が書く
 
 ### 相談モード（脳みそのコピーとして答える）
 「どう思う」「やるべきか」「方向性」「新規」「投資」「人をどうする」など**判断を求める相談**を受けたら：

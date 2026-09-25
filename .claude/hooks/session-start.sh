@@ -20,6 +20,7 @@ cat <<INSTRUCTIONS
 1. context/me.md と context/ai_operations_flow.md を Read で読む
    続けて context/preferences.md（好み・NG メモ）も読み、以降の応対に反映する
    context/handoff.md に [検品済] の付いていない引き継ぎがあれば「引き継ぎ N件あり」と1行報告し、成果物を検品する
+   context/ai_backlog.md を読み、期限が今日以前で未完了の AI 宿題があれば「AI の宿題 N件が期限。着手しますか」と1行で聞く（無ければ何も言わない）
 2. 窓口と使えるツールを**1行**で自己申告（表は不要）
 3. daily/${TODAY}.md があれば、R-daily の「今日の提案3つ」を1行ずつ再掲する。無ければ何も言わない
 4. 「準備完了。何を任せますか？」で締める
