@@ -99,3 +99,4 @@
 - 2026-09-25 らすく式1/5「考える順番」4か条を正本 ~/.codex/AGENTS.md 基本動作へ昇格（Codex・他プロジェクトにも適用）。CLAUDE.md に正本ポインタ追記。Codex 引き継ぎの X バナーを実行検品し PNG 生成
 - 2026-09-25 らすく式「正本は1か所」: repo CLAUDE.md（166行）の中身を AGENTS.md へ移して正本化、CLAUDE.md は @AGENTS.md＋補足4行に。routines/desktop_setup/assistant/codex SKILL の参照5か所を更新。スキル共有（案B）は未実施
 - 2026-09-25 性能ブレーキの棚卸し（権限66許可/8確認・ガード12種・下書き8対送信1）→ 案B Codex 解禁を指示書3か所（AGENTS.md・CLAUDE.md・codex SKILL）に反映。案A は様子見、案C は翔さんが config.toml 編集
+- 2026-09-25 Codex サンドボックスを danger-full-access に緩和（config.toml・控えあり）。Codex 実走テストで Python+Pillow・HTTPS・repo 読み取りの3点成功。codex SKILL の分担を「Codex が実行まで」に更新

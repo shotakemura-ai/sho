@@ -23,7 +23,7 @@ Claude（Fable）が図面を引く → Codex（職人）が作る → Claude �
 - 初回接続は翔さんが PC で `npm install -g @openai/codex` → `codex login`（ChatGPT Business）。設定は repo の `.mcp.json` が持っているので、それ以上の手順はない
 - **版の固定（2026-09-25）**: Codex CLI 0.154.0 で `codex mcp-server` が削除された（0.149.1 で非推奨化）。`.mcp.json` は `npx -y @openai/codex@0.153.4 mcp-server` で最終対応版に固定してある。グローバルの codex が最新でも影響しない（ログイン情報は `~/.codex` を共有）。初回起動は npx のダウンロードで 30 秒前後かかる。恒久対応は公式の Claude Code 用 Codex プラグイン（openai/codex-plugin-cc）への乗り換え
 
-- **Windows の実行制約（2026-09-25 実測）**: Codex の `workspace-write` サンドボックスは Windows で `python.exe` の起動を「アクセスが拒否されました」で弾く（ファイルの読み書きは可）。画像生成は「Codex がスクリプトを書く → Claude が検品 → **Claude が Bash で実行** → Claude が画像を検品」の分担にする。差し戻しで実行方法を変えさせても無駄（`py` も `python` も PATH に無い）。`danger-full-access` は翔さんの明示 OK がある時だけ（2026-09-25 に翔さんが緩和を決定。設定は翔さんが `~/.codex/config.toml` で行う。反映後はこの分担を「Codex が実行まで」に戻してよい）
+- **サンドボックス設定（2026-09-25 緩和済み）**: `~/.codex/config.toml` に `sandbox_mode = "danger-full-access"` と `approval_policy = "on-request"` を設定済み（控えは `config.toml.bak`）。`codex` ツールを呼ぶ時も `sandbox: danger-full-access` を渡す。実測で Python 3.13＋Pillow 11 の実行・外部 HTTPS 疎通・repo 読み取りを確認。よって分担は「Codex がスクリプトを書いて**実行まで** → Claude が画像を検品」。以前の `workspace-write` では Windows で `python.exe` が「アクセスが拒否されました」になる（戻す時はこの制約が復活する）
 
 ## 1. 何を Codex に任せるか（任せないか）
 | 任せる | 任せない（Claude がやる） |
