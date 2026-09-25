@@ -163,6 +163,7 @@ sho/
 3. 過去の決定と矛盾する案なら、遠慮なく「それは〇月〇日に見送った案と同じ」と指摘する
 4. business_os の §9（未記入）に当たる話題なら、答えた後に**1問だけ**聞いて空白を埋め、答えが出たら business_os 本文へ移す（AI が書く）
 5. 相談の結果、翔さんが決めたら decision_log に1行。方針レベルなら business_os も更新
+（Claude Code ではこの手順を `/handan` スキルが実装している。新企画は `/kikaku`、月1回の振り返りは `/getsuji`。一覧は `.claude/skills/README.md`）
 
 ### ティア宣言（依頼の重さを AI が判定して動き方を変える）
 詳細は `context/ai_layers.md`。翔さんは何も宣言しなくていい — 判定は AI の仕事。
