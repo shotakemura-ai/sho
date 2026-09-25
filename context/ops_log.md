@@ -92,3 +92,8 @@
 - 2026-09-25 ホーム直下の重複クローン C:\Users\FONE\sho を検出。正本を origin/main へ52コミット追従（判断キューは昼版ローカルを保持・ops_log衝突は両側保持で解消）。sho は未push 0件を確認、削除はガードフックにより竹村が手動で行う
 - 2026-09-25 05:48 Codex MCP 接続診断：CLI 0.157.0（最新）で mcp-server サブコマンドが廃止済み → .mcp.json の起動コマンドが即終了し CONNECTION_CLOSED。CLI 本体・ログインは正常。対処案を竹村に提示（未変更）
 - 2026-09-25 06:05 Codex MCP 復旧：.mcp.json を npx -y @openai/codex@0.153.4 mcp-server に固定（0.153.4 が最終対応版・0.154.0 で削除を実測で特定）。initialize/tools/list 応答と codex・codex-reply ツールを確認。SKILL.md に版固定の注記追加。次セッションから有効
+- 2026-09-25 Codex MCP 復旧を実機確認：再起動後のセッションで codex ツールが出現し、接続テスト呼び出しに応答（threadId 発行）。/codex スキル利用可
+2026-09-25 | Codex | Xバナー生成スクリプト保存。Python実行アクセス拒否によりPNG生成・検証未完。外部API・ネットワーク不使用。
+2026-09-25 | Codex | Xバナー再試行：pyと子PowerShellのpythonは未認識、where.exeは該当なし、既知フルパスはアクセス拒否。PNG未生成。
+| 2026-09-25 | 缶バッジ | X 用バナー1枚（Codex がスクリプト作成・Claude が実行/検品。接続テスト兼用） | 1 | /codex | 缶バッジ事業部/SNS/画像/20260925_Xバナー_01.png |
+- 2026-09-25 らすく式1/5「考える順番」4か条を正本 ~/.codex/AGENTS.md 基本動作へ昇格（Codex・他プロジェクトにも適用）。CLAUDE.md に正本ポインタ追記。Codex 引き継ぎの X バナーを実行検品し PNG 生成
