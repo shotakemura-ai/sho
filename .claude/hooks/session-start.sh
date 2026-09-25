@@ -8,7 +8,7 @@ set -euo pipefail
 cd "${CLAUDE_PROJECT_DIR:-.}" 2>/dev/null || true
 git fetch origin main 2>&1 | tail -1 || true
 
-TODAY=$(date +%Y%m%d)
+TODAY=$(TZ=Asia/Tokyo date +%Y%m%d)
 
 # 2. Claude に起動ルーティンを指示
 cat <<INSTRUCTIONS
@@ -18,6 +18,7 @@ cat <<INSTRUCTIONS
 竹村翔（非エンジニアの取締役営業部長）への伴走。以下を実行：
 
 1. context/me.md と context/ai_operations_flow.md を Read で読む
+   続けて context/preferences.md（好み・NG メモ）も読み、以降の応対に反映する
 2. 窓口と使えるツールを**1行**で自己申告（表は不要）
 3. daily/${TODAY}.md があれば、R-daily の「今日の提案3つ」を1行ずつ再掲する。無ければ何も言わない
 4. 「準備完了。何を任せますか？」で締める
