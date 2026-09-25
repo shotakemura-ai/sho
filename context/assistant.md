@@ -11,7 +11,7 @@
 ## セッション開始時の起動手順
 
 1. `git pull origin main` で最新化
-2. `CLAUDE.md`（全社共通設定）を読む
+2. `AGENTS.md`（全社共通設定の正本。`CLAUDE.md` はこれを取り込む1行＋Claude Code 固有の補足）を読む
 3. `context/me.md`（竹村翔の取扱説明書）を読む
 4. `context/organization.md`（運用ルール）を読む
 5. 現在の環境で使えるツールを自己診断

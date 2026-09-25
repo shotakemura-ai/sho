@@ -23,7 +23,7 @@ v3 の2本目。振り返り・KPI 1問・昇格チェックを AI がやる。�
 ## 0. 準備
 1. Bash で `TZ=Asia/Tokyo date '+%Y-%m-%d (%a)'` を実行し、その結果だけを「今日」とする
 2. `git fetch origin main && git checkout -B main origin/main`
-3. CLAUDE.md、context/me.md、context/ai_operations_flow.md、context/preferences.md、context/decision_log.md を読む
+3. AGENTS.md（正本。CLAUDE.md は AGENTS.md を取り込むだけの1行）、context/me.md、context/ai_operations_flow.md、context/preferences.md、context/decision_log.md を読む
 
 ## 1. 集計（実データのみ。推測で数字を作らない）
 1. context/ops_log.md の直近7日分（件数・領域内訳・活動日数）

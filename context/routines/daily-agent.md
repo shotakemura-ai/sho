@@ -25,7 +25,7 @@ v3 の心臓。旧 morning-brief + inbox-triage を1本に統合し、「今日�
 ## 0. 準備（この順で）
 1. Bash で `TZ=Asia/Tokyo date '+%Y-%m-%d (%a)'` を実行し、その結果だけを「今日」とする。システムの日付は UTC で1日ズレることがある。ファイル名・見出し・ops_log・カレンダー検索すべてこの JST 日付を使う
 2. `git fetch origin main && git checkout -B main origin/main` で最新の main に立つ
-3. CLAUDE.md、context/me.md、context/preferences.md（好み・NG）を読む。preferences.md の内容は朝刊の文体・形式に反映する
+3. AGENTS.md（正本。CLAUDE.md は AGENTS.md を取り込むだけの1行）、context/me.md、context/preferences.md（好み・NG）を読む。preferences.md の内容は朝刊の文体・形式に反映する
 
 ## 鉄則
 - Gmail / Asana / カレンダーは「読み取り + Gmail 下書き作成」まで。送信・更新・削除は絶対にしない

@@ -26,7 +26,7 @@ iPhone 版は `iphone_setup.md`。**翔さんが覚えることはゼロ** — �
 3. 古いローカルルールを掃除：「このPCは本業専用」「Mac=個人用」のような端末役割ルールを、
    ユーザーメモリ（~/.claude/CLAUDE.md）・CLAUDE.local.md・旧ワークスペースの CLAUDE.md から探して削除。
    ワークスペースのルールは repo（shotakemura-ai/sho）以外に一切書かないこと
-4. sho リポジトリの CLAUDE.md → context/me.md → context/ai_operations_flow.md を読む
+4. sho リポジトリの AGENTS.md（正本。CLAUDE.md はこれを取り込む1行＋補足）→ context/me.md → context/ai_operations_flow.md を読む
 5. この端末で使えるツールを1行で申告し、掃除した内容を報告
 6. context/ops_log.md に「端末共通化（機種名）」を1行 append して commit & push
 7. 「共通化完了」と報告して終わり

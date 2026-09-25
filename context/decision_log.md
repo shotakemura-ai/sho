@@ -24,3 +24,4 @@
 | 2026-09-24 | 仕組み | らすく式の仕組み化5案を全部導入（順序 1→2→5→3→4） | 「全部必要に感じる」。増築禁止ルールは承知の上で本人判断 | 1つずつ2週間おきに導入 |
 | 2026-09-25 | 仕組み | AI チーム編成：本体と検算班は Fable、調査班・起案班は Opus。Codex は画像生成＋Claude 上限時の代打（ChatGPT Business） | らすく式の分業を真似る。Codex には顧客情報・価格を渡さない | 全部 Fable のまま／Codex 不採用 |
 | 2026-09-25 | 仕組み | Codex MCP を npx で 0.153.4 に固定（.mcp.json）。恒久対応は公式 Codex プラグイン（openai/codex-plugin-cc）へ乗り換え | Codex CLI 0.154.0 で mcp-server が削除され接続不能に。翔さんは Codex を開かない前提を維持したまま最短で復旧 | 最新版のまま Claude で代替生成／即プラグイン移行 |
+| 2026-09-25 | 仕組み | repo の指示書は AGENTS.md を正本にし、CLAUDE.md は @AGENTS.md ＋ Claude Code 固有4行に縮小（案A） | Codex は AGENTS.md しか自動で読まず、旧「CLAUDE.md を読め」方式は担保がなかった。直す場所を1か所に | B: スキルも Codex へ共有／C: 現状維持 |

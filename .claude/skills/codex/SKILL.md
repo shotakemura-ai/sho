@@ -51,7 +51,7 @@ Codex に渡すプロンプトには次を**含めない**。含めないと成�
 ## 4. 「代打」の使い方（Claude の上限に当たった時）
 正直に書くと、**Claude が止まっている間は、このスキル自体も動きません**（呼び出し元が Claude なので）。代打の実体は次の2つ：
 - **事前の節約**：長い実行作業（画像を何案も作る、スクリプトを書く）を Codex に振ると、Claude 側の消費が減って上限に当たりにくくなる
-- **止まった時**：翔さんが PC で Codex を直接開く。`AGENTS.md` が `CLAUDE.md` と同じルールを読ませるので、Claude と同じ前提で動く。やった内容は Codex が `context/handoff.md` に3行＋ops_log に1行残し、Claude 復帰後に検品する（Claude は起動時に handoff.md を読む）
+- **止まった時**：翔さんが PC で Codex を直接開く。ルールの正本は `AGENTS.md`（Claude Code の `CLAUDE.md` はそれを取り込む1行）なので、Codex も Claude と同じ前提で動く。やった内容は Codex が `context/handoff.md` に3行＋ops_log に1行残し、Claude 復帰後に検品する（Claude は起動時に handoff.md を読む）
 つまり上限対策は「Codex を Claude の中で使う」より「**同じ記憶（repo）を両方が読む**」ことで成立している。
 
 ## やらないこと
