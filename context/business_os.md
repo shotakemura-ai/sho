@@ -71,7 +71,7 @@
 | フレームレス金属ポスター基材 | 構想 | memory/metal_poster_frameless_substrate |
 | 缶のフォトフレーム化 | 構想 | memory/kan_photo_frame_project |
 | 電池材料の新規開拓 | 構想 | memory/battery_material_entry_plan |
-| 缶バッジマシンのお試しレンタル（社長発案） | 素案作成中（Asana 9/18 期限超過） | memory/kanbadge_machine_rental_scheme、daily/20260921.md:29 |
+| 缶バッジマシンのお試しレンタル（社長発案） | 設計シート v1 作成（2026-09-26・競合11社調査込み）。推奨は「購入充当型お試し」（手動機＋業務用機・1か月）。社長とのすり合わせ待ち（10/2） | memory/kanbadge_machine_rental_scheme、缶バッジ事業部/営業/マシンレンタル/20260926_マシンレンタル_設計シート.md |
 | 個人マスタリー Lv.3→Lv.5（戦略家） | 期限 2026/8/26 を経過。**月次評価 6〜8月は一旦捨て（翔さん 2026-09-25）** | mastery_plan:3-4、learnings:152-154 |
 | ソロ起業の検討 | 「別トピック」として存在のみ。中身は未記入 | memory/ai_expansion_roadmap_89ki:18 |
 
