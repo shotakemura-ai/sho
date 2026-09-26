@@ -108,3 +108,4 @@
 - 2026-09-25 らすく式「記憶まわりを任せる」: AGENTS.md に「宿題と記憶」ルール（宿題発生時の即登録＝翔さんは Asana／AI は context/ai_backlog.md、残タスク質問への答え方、指摘は preferences へ）を追加。ai_backlog.md 新設（今日の AI 宿題6件）。起動フックと R-weekly に backlog の確認を追加
 - 2026-09-25 仕組み：らすく式スキルマップの実装。.claude/skills に /buntai /handan /kikaku /getsuji を新設、README.md を4分類マップに改訂、CLAUDE.md・AGENTS.md 相談モードに参照追加、ai_backlog に図解ルールの宿題1件
 - 2026-09-26 仕組み：らすく式「寝ている間に働く」定期実行の実装。①クラウド R-monthly（毎月1日 9:00・月次壁打ちの事実を自動生成・正本 context/routines/monthly-review.md）②この PC の kakei-monthly（毎月1日 7:00・MF 読み取り→家計月次・PB/家計管理/月次/・git 管理外）③朝刊 R-daily に月初フック追加＋Routine 本体を daily-agent.md（9/25 改訂版）に同期。AI運用台帳・routines/README・ai_backlog を更新
+- 2026-09-26 仕組み：らすく式「実例7つ」の実装。.claude/skills に /mentor（採点式 FB・次回の一手→shodan-mae で再掲）と /kiji（録音→記事/報告書/顧客資料の一気通貫）を新設、README に7つのパイプライン表を追加、shodan-ato D と shodan-mae にメンター FB の受け渡しを1行ずつ追加
