@@ -38,3 +38,6 @@ node_modules/
 
 # Claude Code 個人設定（認証情報を含むため git 管理外）
 .claude/settings.local.json
+
+# 個人の家計データ（OneDrive 内で管理・git には載せない）
+PB/家計管理/月次/
