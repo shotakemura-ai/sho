@@ -115,3 +115,4 @@
 - 2026-09-26 記録：strengths.md に受検の経緯（翔さん自腹・社長は会社導入に消極）を追記
 - 2026-09-26 記録：資質B案を decision_log に、スキル忘れ補完の方針を preferences に、B案3か月振り返りを ai_backlog に登録
 - 2026-09-26 個人：家計月次の初回（2026年8月分）を本体セッションで作成（MF 読み取り→PB/家計管理/月次/202608_家計月次.md＋純資産推移.csv・git 管理外）。検算班 OK（計算全件一致・出典注記4件を追記）。kakei-monthly の読み取り手順を改訂（/cf/monthly・/bs/balance_sheet 方式。/cf/summary の前月切替は効かないため不使用）。承認待ちで止まっていたテスト実行は停止
+- 2026-09-26 仕組み：朝刊 R-daily の §3「今日の提案」をスキルの出番から作る形に改訂（予定・メール・判断キュー・Asana→/shodan-mae・/shodan-ato・/mitsumori・/handan・cool-down・/kikaku の対応表）。正本 daily-agent.md とクラウド Routine「朝刊」を同期。翔さんがスキル名を覚えない前提
