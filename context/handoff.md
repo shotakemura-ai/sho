@@ -23,3 +23,8 @@
 成果物：既存スクリプトのみ。PNGなし。
 未完・要確認：py/pythonはCommandNotFound、既知フルパスはアクセス拒否。エラー原文を対話で報告。
 [検品済 2026-09-25] 上の件と同一。Claude 側の python で実行済み・PNG 生成済み。Codex 環境の python 不可は既知の制約として記録。
+
+### 2026-09-26 18:30  by 会社PC（Claude Code）
+- やったこと：家計の再構築「設定日①」。MF の中項目改名（15件）・予算の固定/変動設定・Suica/iDeCo 再連携確認・習い事は A案（振込 70,000→110,000）で決定。8月分の家計月次と純資産推移 CSV は会社 PC の `PB/家計管理/月次/`（git 管理外・この PC にのみ存在）
+- 成果物：`PB/家計管理/仕分けルール.md`（AI 用対応表・この行で repo に載せた。口座番号・氏名なし）、`.claude/skills/`（buntai/handan/kikaku/getsuji/mentor/kiji）、`context/routines/monthly-review.md`、判断ログ・ai_backlog
+- 未完・要確認：設定日②（特別費の年間表→積立の繰り返し入力、旧大項目の明細付け替え）は Mac で続行可。Mac では Chrome で MF にログインし直す（新しい環境として追加認証メールが来る）。scheduled-task（家計月次・朝コクピット等）は会社 PC 側だけで動く
