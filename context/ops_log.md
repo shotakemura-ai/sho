@@ -109,3 +109,9 @@
 - 2026-09-25 仕組み：らすく式スキルマップの実装。.claude/skills に /buntai /handan /kikaku /getsuji を新設、README.md を4分類マップに改訂、CLAUDE.md・AGENTS.md 相談モードに参照追加、ai_backlog に図解ルールの宿題1件
 - 2026-09-26 仕組み：らすく式「寝ている間に働く」定期実行の実装。①クラウド R-monthly（毎月1日 9:00・月次壁打ちの事実を自動生成・正本 context/routines/monthly-review.md）②この PC の kakei-monthly（毎月1日 7:00・MF 読み取り→家計月次・PB/家計管理/月次/・git 管理外）③朝刊 R-daily に月初フック追加＋Routine 本体を daily-agent.md（9/25 改訂版）に同期。AI運用台帳・routines/README・ai_backlog を更新
 - 2026-09-26 仕組み：らすく式「実例7つ」の実装。.claude/skills に /mentor（採点式 FB・次回の一手→shodan-mae で再掲）と /kiji（録音→記事/報告書/顧客資料の一気通貫）を新設、README に7つのパイプライン表を追加、shodan-ato D と shodan-mae にメンター FB の受け渡しを1行ずつ追加
+- 2026-09-26 記録：Gallup Access から34資質の全順位を取得し context/strengths.md に追記（実行力TOP10ゼロ・回復志向34等の補正動作7項目）
+- 2026-09-26 記録：共有ドライブの在籍者ストレングス（竹原・船吉・菅・伊藤 TOP5）を読み取り、context/strengths.md にチーム節（補完関係・摩擦の型・個別の効き所）を追加
+- 2026-09-26 記録：strengths.md チーム節に所属（菅＝営業3部・伊藤＝総務経理）と未受検5名を追記
+- 2026-09-26 記録：strengths.md に受検の経緯（翔さん自腹・社長は会社導入に消極）を追記
+- 2026-09-26 記録：資質B案を decision_log に、スキル忘れ補完の方針を preferences に、B案3か月振り返りを ai_backlog に登録
+- 2026-09-26 個人：家計月次の初回（2026年8月分）を本体セッションで作成（MF 読み取り→PB/家計管理/月次/202608_家計月次.md＋純資産推移.csv・git 管理外）。検算班 OK（計算全件一致・出典注記4件を追記）。kakei-monthly の読み取り手順を改訂（/cf/monthly・/bs/balance_sheet 方式。/cf/summary の前月切替は効かないため不使用）。承認待ちで止まっていたテスト実行は停止
